@@ -53,26 +53,31 @@ The ranking between users, which is scored after completing the daily mission an
 ```  
 📛 이름: 박유영
 🔖 학번: ****1597
+✉️ 메일: dbduda1@kookmin.ac.kr
 📌 역할: 팀장, Back-End 개발(사용자 정보 관리, 만보기 구현)
 ```  
 ```
 📛 이름: 김정민
 🔖 학번: ****0883
+✉️ 메일: jess654852@kookmin.ac.kr
 📌 역할: Back-End 개발(일일 미션, 사용자 간 순위, 보상 및 점수 시스템 구현)
 ```
 ```
 📛 이름: 송용욱
 🔖 학번: ****0711
+✉️ 메일: songyonguk@kookmin.ac.kr
 📌 역할: Front-End 개발
 ```
 ```
 📛 이름: 안현섭
 🔖 학번: ****5166
+✉️ 메일: abo3323@kookmin.ac.kr
 📌 역할: Front-End 개발
 ```
 ```
 📛 이름: 이정훈
 🔖 학번: ****1678
+✉️ 메일: yellowoov@kookmin.ac.kr
 📌 역할: Back-End 개발(등산로 추천 시스템, 커뮤니티 구현)
 ```
 <h2>✔️ 사용법</h2>  
