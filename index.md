@@ -6,14 +6,14 @@
 **Github Page Link** : https://kookmin-sw.github.io/capstone-2022-42
 
 <h2>✔️ 프로젝트 소개</h2> 
-코로나19로 인한 답답한 일상 속에서 새로운 여가 활동을, 잃어버린 건강을 찾고자 하는 사람들의 증가는 <b>등산 인구의 증가</b>를 불러일으켰다. 뿐만 아니라 등산은 오래전부터 남녀노소 상관없이 즐길 수 있는 여가 활동으로 자리 잡고 있다. 
-<br><br> 
+코로나19로 인한 답답한 일상 속에서 새로운 여가 활동을, 잃어버린 건강을 찾고자 하는 사람들의 증가는 <b>등산 인구의 증가</b>를 불러일으켰다. 뿐만 아니라 등산은 오래전부터 남녀노소 상관없이 즐길 수 있는 여가 활동으로 자리 잡고 있다.<br>
+<br>
 본 프로젝트에서는 기존에 등산을 즐겨 하던 사람들에게 만보기, 다양한 기준에 따른 등산로 추천 등을 제공하여 더 즐거운 등산을 장려하고자 한다. 더 나아가 기존에 등산을 즐겨 하지 않는 사람들 또한 등산에 흥미를 붙이고 등산으로 인한 건강 관리를 장려한다.
 일일 미션 완료, 등산로 완주 후에 얻을 수 있는 점수로 매기는 사용자 간 랭크는 사용자 간의 경쟁 심리, 보상 심리를 자극해 잦은 등산을 유도하며 이는 곧 등산이 사용자의 건강을 가꾸는 수단이 됨을 기대할 수 있다.
 
 <h2>✔️ Abstract</h2>  
-The increase in the number of people seeking new leisure activities and lost health in the frustrating daily life caused by COVID-19 has caused an <b>increase in the mountaineering population</b>. In addition, hiking has long been a leisure activity that can be enjoyed regardless of age or gender.   
-<br><br> 
+The increase in the number of people seeking new leisure activities and lost health in the frustrating daily life caused by COVID-19 has caused an <b>increase in the mountaineering population</b>. In addition, hiking has long been a leisure activity that can be enjoyed regardless of age or gender.<br>
+<br>
 In this project, it is intended to encourage more enjoyable hiking by providing pedometers and recommendations for hiking trails according to various standards to those who have enjoyed hiking. Furthermore, people who do not enjoy hiking in the past are also interested in hiking and encourage health care due to hiking.
 The ranking between users, which is scored after completing the daily mission and completing the hiking trail, stimulates competitive and reward psychology among users, leading to frequent hiking, which can be expected to be a means of improving users' health.
 
