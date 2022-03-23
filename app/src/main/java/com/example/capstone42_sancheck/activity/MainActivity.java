@@ -1,15 +1,19 @@
-package com.example.capstone42_sancheck;
+package com.example.capstone42_sancheck.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.example.capstone42_sancheck.R;
+import com.example.capstone42_sancheck.fragment.FragmentBoard;
+import com.example.capstone42_sancheck.fragment.FragmentHome;
+import com.example.capstone42_sancheck.fragment.FragmentRank;
+import com.example.capstone42_sancheck.fragment.FragmentSearch;
+import com.example.capstone42_sancheck.fragment.FragmentWalk;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
