@@ -1,4 +1,4 @@
-package com.example.capstone42_sancheck;
+package com.example.capstone42_sancheck.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,13 +9,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class FragmentRank extends Fragment {
+import com.example.capstone42_sancheck.R;
+
+public class FragSignIn3 extends Fragment {
     private View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.frag_rank, container, false);
+        view = inflater.inflate(R.layout.frag_sign_in3, container, false);
+
         return view;
     }
 }
