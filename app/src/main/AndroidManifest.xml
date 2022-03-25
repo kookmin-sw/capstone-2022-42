@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Capstone42_Sancheck">
         <activity
             android:name=".activity.SignInActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activity.SplashActivity"
             android:exported="true"

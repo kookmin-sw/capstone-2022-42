@@ -1,13 +1,20 @@
 package com.example.capstone42_sancheck.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.capstone42_sancheck.R;
 import com.example.capstone42_sancheck.adapter.ViewPagerAdapter;
+import com.example.capstone42_sancheck.fragment.FragSignIn3;
 
 import me.relex.circleindicator.CircleIndicator3;
 
@@ -17,7 +24,6 @@ public class SignInActivity extends AppCompatActivity {
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 3;
     private CircleIndicator3 mIndicator;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
