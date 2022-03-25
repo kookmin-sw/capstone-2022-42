@@ -22,23 +22,23 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="57dp"
         android:text="지금 바로 가입하세요!"
         android:textSize="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"></TextView>
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+    </TextView>
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <Button
+        android:id="@+id/btn_google"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/btn_google"
+        android:layout_marginBottom="95dp"
+        android:background="#00000000"
+        android:contentDescription="@string/app_name"
+        android:drawableBottom="@drawable/btn_google"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
