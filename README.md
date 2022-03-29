@@ -21,7 +21,7 @@ The increase in the number of people seeking new leisure activities and lost hea
 <br><br> 
 In this project, we will provide pedometers to record the number of steps, weekly goal setting, user-to-user ranking system, and various criteria to encourage hikers to enjoy hiking, and those who do not enjoy hiking will also be interested in hiking.
 <br>
-<h3>SanCheck Effect</h3>
+<h3>SanCheck Effects</h3>
 🔸 You can expect the pedometer and weekly goal setting function provided by this application not only to use this application as an application for mountain climbing but also to use it as a healthcare application.
 
 🔸 Through the length, time required, and difficulty assigned to each hiking trail and hiking trail provided by this application, it helps users make appropriate choices from light exercise to normal climbing.  
