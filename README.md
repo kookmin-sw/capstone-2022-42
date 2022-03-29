@@ -19,8 +19,13 @@
 <h2>✔️ Abstract</h2>  
 The increase in the number of people seeking new leisure activities and lost health in the frustrating daily life caused by COVID-19 has caused an <b>increase in the mountaineering population</b>. In addition, hiking has long been a leisure activity that can be enjoyed regardless of age or gender.   
 <br><br> 
-In this project, it is intended to encourage more enjoyable hiking by providing pedometers and recommendations for hiking trails according to various standards to those who have enjoyed hiking. Furthermore, people who do not enjoy hiking in the past are also interested in hiking and encourage health care due to hiking.
-The ranking between users, which is scored after completing the daily mission and completing the hiking trail, stimulates competitive and reward psychology among users, leading to frequent hiking, which can be expected to be a means of improving users' health.
+In this project, we will provide pedometers to record the number of steps, weekly goal setting, user-to-user ranking system, and various criteria to encourage hikers to enjoy hiking, and those who do not enjoy hiking will also be interested in hiking.
+<br>
+<h3>SanCheck Effect</h3>
+🔸 You can expect the pedometer and weekly goal setting function provided by this application not only to use this application as an application for mountain climbing but also to use it as a healthcare application.
+
+🔸 Through the length, time required, and difficulty assigned to each hiking trail and hiking trail provided by this application, it helps users make appropriate choices from light exercise to normal climbing.  
+🔸 Ranks among users based on the score that can be obtained after completing the daily mission and completing the hiking trail stimulate competition among users and reward psychology, which can be expected to be a means of improving users' health.
 
 
 <h2>✔️ 어플리케이션 기능 소개</h2>
