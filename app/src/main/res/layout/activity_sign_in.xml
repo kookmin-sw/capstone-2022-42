@@ -20,7 +20,7 @@
 
         </androidx.viewpager2.widget.ViewPager2>
         <me.relex.circleindicator.CircleIndicator3
-            app:ci_drawable="@drawable/grey_radius"
+            app:ci_drawable="@drawable/gray_radius"
             android:id="@+id/indicator"
             android:layout_width="match_parent"
             android:layout_height="48dp"
