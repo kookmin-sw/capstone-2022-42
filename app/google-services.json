@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "894927175835",
+    "firebase_url": "https://capstone42-sancheck-96817-default-rtdb.firebaseio.com",
+    "project_id": "capstone42-sancheck-96817",
+    "storage_bucket": "capstone42-sancheck-96817.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894927175835:android:376532b0db4efa3047863e",
+        "android_client_info": {
+          "package_name": "com.example.capstone42_sancheck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894927175835-mf1km45blq086b1i8hga88n03qpdl5g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeCWqCwWfGXzGjwnjAkoIM_bBghp52gdw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894927175835-mf1km45blq086b1i8hga88n03qpdl5g1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
