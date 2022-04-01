@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.capstone42_sancheck">
+    <!-- 사용자 위치정보 접근을 위한 퍼미션 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- 스텝 감지 센서 사용 설정 -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
 
     <application
         android:allowBackup="true"
@@ -9,6 +15,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone42_Sancheck">
+        <activity
+            android:name=".activity.SearchActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- 구글 맵 관련 meta-data -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDOazzDcxjMnH9jod9CXqbhn5S_XwztK4I" />
+
         <activity
             android:name=".activity.SignInActivity"
             android:exported="true" />
@@ -19,16 +35,13 @@
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.MainActivity"
-            android:exported="true">
+            android:exported="true" />
 
-        </activity>
     </application>
 
 </manifest>
