@@ -4,16 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </Button>
-        </LinearLayout>
+    android:orientation="vertical"
+    >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -51,18 +43,100 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ex1">
-                </ImageView>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="105dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/home_box"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/marubold"
+                            android:text="2,000"
+                            android:textColor="#b5c7ed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:text="Steps"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="105dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/home_box"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/marubold"
+                            android:text="4.3"
+                            android:textColor="#b5c7ed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:text="Km"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="105dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/home_box"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/marubold"
+                            android:text="184"
+                            android:textColor="#b5c7ed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:text="Kcal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -71,6 +145,85 @@
                     android:fontFamily="@font/marubold">
                 </TextView>
         </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                        <FrameLayout
+                            android:layout_width="400dp"
+                            android:layout_height="190dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/home_rectangle">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/marubold"
+                                    android:text="북 악 산"
+                                    android:textSize="20dp">
+                                </TextView>
+                                <ImageView
+                                    android:layout_width="400dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/home_mission_ex">
+
+                                </ImageView>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="400dp"
+                            android:layout_height="190dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/home_rectangle">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/marubold"
+                                    android:text="관 악 산"
+                                    android:textSize="20dp">
+                                </TextView>
+                                <ImageView
+                                    android:layout_width="400dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/home_mission_ex">
+
+                                </ImageView>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="400dp"
+                            android:layout_height="190dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/home_rectangle">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/marubold"
+                                    android:text="한 양 도 성"
+                                    android:textSize="20dp">
+                                </TextView>
+                                <ImageView
+                                    android:layout_width="400dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/home_mission_ex">
+
+                                </ImageView>                        </FrameLayout>
+
+                </LinearLayout>
+        </ScrollView>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
