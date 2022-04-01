@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/black_radius.xml" value="0.1" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/gray_radius.xml" value="0.1785" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/grey_radius.xml" value="0.1785" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/home_box.xml" value="0.156" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/ic_baseline_content_paste_24.xml" value="0.1" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1785" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.1785" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/ic_baseline_notifications_none_24.xml" value="0.1785" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1785" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/font/font.xml" value="0.2838541666666667" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/activity_main.xml" value="0.18613138686131386" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/frag_board.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/frag_home.xml" value="0.264" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/frag_rank.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/frag_search.xml" value="0.1" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/frag_sign_in1.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/frag_sign_in2.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/frag_sign_in3.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/frag_walk.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/loading.xml" value="0.264" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/login.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/menu/bottom_menu.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1785" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1785" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
