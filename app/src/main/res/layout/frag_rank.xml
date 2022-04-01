@@ -1,19 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/ranking_silver"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:paddingLeft="30dp">
+        </ImageView>
 
-    <TextView
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/bold"
+                android:paddingTop = "20dp"
+                android:paddingLeft="40dp"
+                android:text="Silver 3"
+                android:textSize="30dp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/light"
+                android:paddingBottom = "20dp"
+                android:paddingLeft="40dp"
+                android:text="#5024"
+                android:textSize="15dp"></TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="랭킹화면"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"></TextView>
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전체순위"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/marubold">
+        </TextView>
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <FrameLayout
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/home_rectangle">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_sample">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/marubold"
+                    android:text="Sample User"
+                    android:textSize="20dp">
+                </TextView>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/home_rectangle">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_sample">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/marubold"
+                    android:text="Sample User"
+                    android:textSize="20dp">
+                </TextView>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/home_rectangle">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_sample">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/marubold"
+                    android:text="Sample User"
+                    android:textSize="20dp">
+                </TextView>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/home_rectangle">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_sample">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/marubold"
+                    android:text="Sample User"
+                    android:textSize="20dp">
+                </TextView>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/home_rectangle">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_sample">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/marubold"
+                    android:text="Sample User"
+                    android:textSize="20dp">
+                </TextView>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/home_rectangle">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_sample">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/marubold"
+                    android:text="Sample User"
+                    android:textSize="20dp">
+                </TextView>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/home_rectangle">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_sample">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/marubold"
+                    android:text="Sample User"
+                    android:textSize="20dp">
+                </TextView>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/home_rectangle">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_sample">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/marubold"
+                    android:text="Sample User"
+                    android:textSize="20dp">
+                </TextView>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/home_rectangle">
+
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_sample">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/marubold"
+                    android:text="Sample User"
+                    android:textSize="20dp">
+                </TextView>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/home_rectangle">
+
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_sample">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/marubold"
+                    android:text="Sample User"
+                    android:textSize="20dp">
+                </TextView>
+            </FrameLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
