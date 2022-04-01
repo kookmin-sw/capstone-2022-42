@@ -12,6 +12,15 @@
         <entry key="..\:/Users/82109/Desktop/Capstone2022/app/src/main/res/layout/frag_walk.xml" value="0.25" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/app/src/main/res/layout/frag_검색.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/app/src/main/res/menu/bottom_menu.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/font/font.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.161231884057971" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.6791666666666667" />
+        <entry key="app/src/main/res/layout/frag_board.xml" value="0.43568840579710144" />
+        <entry key="app/src/main/res/layout/frag_home.xml" value="0.43568840579710144" />
+        <entry key="app/src/main/res/layout/frag_rank.xml" value="0.5967963386727689" />
+        <entry key="app/src/main/res/layout/frag_search.xml" value="0.6791666666666667" />
+        <entry key="app/src/main/res/layout/frag_sign_in1.xml" value="0.6791666666666667" />
+        <entry key="app/src/main/res/layout/frag_walk.xml" value="0.43568840579710144" />
       </map>
     </option>
   </component>
