@@ -15,6 +15,8 @@ import com.example.capstone42_sancheck.fragment.FragmentRank;
 import com.example.capstone42_sancheck.fragment.FragmentSearch;
 import com.example.capstone42_sancheck.fragment.FragmentWalk;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,11 +29,12 @@ public class MainActivity extends AppCompatActivity {
     private FragmentRank fr;
     private FragmentSearch fs;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         bottomNavigationView = findViewById(R.id.bottomNavi);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
