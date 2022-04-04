@@ -5,6 +5,8 @@
 **Github Link** : https://github.com/kookmin-sw/capstone-2022-42  
 **Github Page Link** : https://kookmin-sw.github.io/capstone-2022-42
 
+**중간발표자료** : https://github.com/kookmin-sw/capstone-2022-42/blob/76e4f7fe45beecb0517d2ff329bc6a583b9c6b13/docs/%ED%8C%8042-%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf
+
 <h2>✔️ 프로젝트 소개</h2> 
 코로나19로 인한 답답한 일상 속에서 새로운 여가 활동을, 잃어버린 건강을 찾고자 하는 사람들의 증가는 <b>등산 인구의 증가</b>를 불러일으켰다. 뿐만 아니라 등산은 오래전부터 남녀노소 상관없이 즐길 수 있는 여가 활동으로 자리 잡고 있다. 
 본 프로젝트에서는 걸음 수를 기록할 수 있는 만보기, 주간 목표 설정, 사용자 간 랭킹 시스템, 다양한 기준에 따른 등산로 추천을 제공하여 기존에 등산을 즐겨 하는 사람들에게 더 즐거운 등산을 장려하고, 더 나아가 기존에 등산을 즐겨 하지 않는 사람들 또한 등산에 흥미를 붙여 등산의 즐거움을 알게 해주고자 한다.

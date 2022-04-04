@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
     </TextView>
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/btn_google"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
