@@ -2,8 +2,6 @@
 
 ![로고](./images/logo.PNG)  
 
-<iframe id="video" width="648%" height="364.5%" src="/docs/팀42-소개동영상.mp4" frameborder="0"> </iframe>
-
 **Github Link** : https://github.com/kookmin-sw/capstone-2022-42  
 **Github Page Link** : https://kookmin-sw.github.io/capstone-2022-42
 
