@@ -28,13 +28,9 @@
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/menu/bottom_menu.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1785" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1785" />
-<<<<<<< HEAD
-        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/layout/frag_rank.xml" value="0.4466666666666667" />
-        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/layout/frag_rank2.xml" value="0.43302180685358255" />
-        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/layout/listviewitem.xml" value="0.115625" />
-=======
+
         <entry key="..\:/Users/Public/AndroidStudioProjects/git/capstone-2022-42/app/src/main/res/layout/frag_home.xml" value="0.264" />
->>>>>>> upstream/master
+
       </map>
     </option>
   </component>
