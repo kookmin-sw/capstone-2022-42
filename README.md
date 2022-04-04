@@ -4,7 +4,7 @@
 
 **Github Link** : https://github.com/kookmin-sw/capstone-2022-42  
 **Github Page Link** : https://kookmin-sw.github.io/capstone-2022-42
-**중간발표자료** : docs/팀42-중간발표자료.pdf
+**중간발표자료** : https://github.com/kookmin-sw/capstone-2022-42/blob/76e4f7fe45beecb0517d2ff329bc6a583b9c6b13/docs/%ED%8C%8042-%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf
 
 <h2>✔️ 프로젝트 소개</h2> 
 코로나19로 인한 답답한 일상 속에서 새로운 여가 활동을, 잃어버린 건강을 찾고자 하는 사람들의 증가는 <b>등산 인구의 증가</b>를 불러일으켰다. 뿐만 아니라 등산은 오래전부터 남녀노소 상관없이 즐길 수 있는 여가 활동으로 자리 잡고 있다. 
