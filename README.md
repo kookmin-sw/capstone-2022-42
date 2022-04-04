@@ -2,6 +2,8 @@
 
 ![로고](./images/logo.PNG)  
 
+<image width="80%" src="https://user-images.githubusercontent.com/54975374/161473333-bbc24cf7-bc13-4c5c-a76a-f81af0b3fd83.mp4" />
+
 **Github Link** : https://github.com/kookmin-sw/capstone-2022-42  
 **Github Page Link** : https://kookmin-sw.github.io/capstone-2022-42
 
