@@ -37,12 +37,21 @@ dependencies {
     /** 파이어베이스 관련 gradle**/
     implementation platform('com.google.firebase:firebase-bom:29.2.1')
     implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-database'
-    //implementation 'com.google.firebase:firebase-core:20.1.1'
-//    implementation 'com.google.firebase:firebase-auth:21.0.2' // 파이어베이스 인증
+    implementation 'com.google.firebase:firebase-database:20.0.4'
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
+    implementation 'com.google.firebase:firebase-core:20.1.2'
+    implementation 'com.google.firebase:firebase-auth:21.0.3' // 파이어베이스 인증
 //    implementation 'com.firebaseui:firebase-ui-auth:4.2.1' // 파이어베이스 인증2
+
 //    implementation 'com.github.bumptech.glide:glide:4.9.0' // 글라이드 이미지 로딩
 //    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0' // 글라이드 이미지 로딩2
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0' // 글라이드 이미지 로딩
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0' // 글라이드 이미지 로딩2
+
+//    implementation 'com.google.firebase:firebase-firestore:24.1.0'
+//    implementation 'com.google.firebase:firebase-storage:20.0.1'
 
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'me.relex:circleindicator:2.1.6'

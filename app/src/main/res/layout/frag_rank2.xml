@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/userRank"
+        android:layout_width="76dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="#96A5F6"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:text="rank" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:fontFamily="@font/bold"
+        android:text="name" />
+
+    <TextView
+        android:id="@+id/userScore"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:fontFamily="@font/bold"
+        android:text="score" />
+
+
+</LinearLayout>
