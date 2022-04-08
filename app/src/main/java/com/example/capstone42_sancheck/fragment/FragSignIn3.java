@@ -46,7 +46,7 @@ public class FragSignIn3 extends Fragment {
         btn_google = view.findViewById(R.id.btn_google);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("894927175835-mf1km45blq086b1i8hga88n03qpdl5g1.apps.googleusercontent.com")
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
         googleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
