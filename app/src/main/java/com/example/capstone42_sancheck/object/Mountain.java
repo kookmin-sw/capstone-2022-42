@@ -1,6 +1,7 @@
 package com.example.capstone42_sancheck.object;
 
 public class Mountain {
+    private int drawableId; // 사진
     private int index; // 인덱스
     private String M_Name; // 산명
     private String PM_Name; // 등산로명
@@ -8,6 +9,8 @@ public class Mountain {
     private double LT; // 등산로 길이
     private double uppl; // 상행 시간
     private double godn; // 하행 시간
+
+    public int getDrawableId(){return drawableId;}
 
     public int getIndex() {
         return index;
@@ -36,6 +39,8 @@ public class Mountain {
     public String getDiff() {
         return diff;
     }
+
+    public void setDrawableId(int drawableId){this.drawableId = drawableId;}
 
     public void setIndex(int index) {
         this.index = index;

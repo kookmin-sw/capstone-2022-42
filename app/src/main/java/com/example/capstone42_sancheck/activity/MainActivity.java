@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.capstone42_sancheck.R;
 import com.example.capstone42_sancheck.fragment.FragmentBoard;
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private FragmentBoard fb;
     private FragmentRank fr;
     private FragmentSearch fs;
+    private ImageView iv_heart;
+    private ImageView iv_alram;
 
 
 
@@ -66,6 +71,24 @@ public class MainActivity extends AppCompatActivity {
         fr = new FragmentRank();
         fs = new FragmentSearch();
         setFrag(0); // 첫 화면 지정
+
+        iv_alram = (ImageView) findViewById(R.id.iv_alram);
+        iv_heart = (ImageView) findViewById(R.id.iv_heart);
+
+        iv_alram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AlramActivity.class);
+                startActivity(intent);
+            }
+        });
+        iv_heart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CartActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // 프래그먼트 교체
