@@ -4,10 +4,8 @@
     <!-- 사용자 위치정보 접근을 위한 퍼미션 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-    <!-- 스텝 감지 센서 사용 설정 -->
-    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 스텝 감지 센서 사용 설정 -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone42_Sancheck">
-
+        <activity
+            android:name=".activity.AlramActivity"
+            android:exported="false" />
         <!-- 구글 맵 관련 meta-data -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -32,12 +32,18 @@
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.MainActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".activity.CartActivity">
+
+        </activity>
 
     </application>
 
