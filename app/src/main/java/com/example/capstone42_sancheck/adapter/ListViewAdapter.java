@@ -9,12 +9,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.capstone42_sancheck.object.ListViewItem;
+import com.example.capstone42_sancheck.object.SearchListViewItem;
 
 import java.util.ArrayList;
 
 public class ListViewAdapter extends BaseAdapter {
-    private ArrayList<ListViewItem> arrayList = new ArrayList<>();
+    private ArrayList<SearchListViewItem> arrayList = new ArrayList<>();
 
     public ListViewAdapter() {
 
@@ -40,26 +40,29 @@ public class ListViewAdapter extends BaseAdapter {
 
         if (view == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.listviewitem, viewGroup, false);
+            view = inflater.inflate(R.layout.frag_search_listview_item, viewGroup, false);
         }
 
         TextView text1 = (TextView) view.findViewById(R.id.M_Name);
         TextView text2 = (TextView) view.findViewById(R.id.PM_Name);
+        TextView text3 = (TextView) view.findViewById(R.id.LT);
 
-        ListViewItem listViewItem = arrayList.get(i);
+        SearchListViewItem searchListViewItem = arrayList.get(i);
 
-        text1.setText(listViewItem.getText1());
-        text2.setText(listViewItem.getText2());
+        text1.setText(searchListViewItem.getText1());
+        text2.setText(searchListViewItem.getText2());
+        text3.setText(searchListViewItem.getText3().toString() + "km");
 
         return view;
     }
 
-    public void addItem(String text1, String text2) {
-        ListViewItem listViewItem = new ListViewItem();
-        listViewItem.setText1(text1);
-        listViewItem.setText2(text2);
+    public void addItem(String text1, String text2, Double text3) {
+        SearchListViewItem searchListViewItem = new SearchListViewItem();
+        searchListViewItem.setText1(text1);
+        searchListViewItem.setText2(text2);
+        searchListViewItem.setText3(text3);
 
-        arrayList.add(listViewItem);
+        arrayList.add(searchListViewItem);
     }
 
     public void clear() {

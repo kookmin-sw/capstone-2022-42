@@ -15,11 +15,35 @@
       },
       "oauth_client": [
         {
+          "client_id": "894927175835-46qkq5q0g267gvgaj3jsol33gr37o8rh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.capstone42_sancheck",
+            "certificate_hash": "68a9eb6e70aaa9a013dcc33ea9e210b29fd51218"
+          }
+        },
+        {
           "client_id": "894927175835-5udrooot04k8gsrtha8h491554vhtct4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.capstone42_sancheck",
             "certificate_hash": "ff5d027318a20c78d6c420cefe4d4ca4fe46760b"
+          }
+        },
+        {
+          "client_id": "894927175835-eqa991u3ba2koe373q4d2a3vnfj2c6q5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.capstone42_sancheck",
+            "certificate_hash": "fd00fe601eaebbe5ccab60f4540460b473b4a7c9"
+          }
+        },
+        {
+          "client_id": "894927175835-r97fmeej38tk9voelnd1graf4drnakod.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.capstone42_sancheck",
+            "certificate_hash": "ff7f1db7d56b6a8ad8a4cf155d592eae42d766f2"
           }
         },
         {

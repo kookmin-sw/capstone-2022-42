@@ -1,15 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SearchActivity" >
+    tools:contet=".activity.SearchActivity">
 
-    <fragment
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="416dp"
+        android:layout_height="670dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ListView
+            android:id="@+id/lv1"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight="0.8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et1"
+            tools:layout_editor_absoluteX="-2dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="418dp"
+            android:layout_height="73dp"
+            android:fontFamily="@font/marubold"
+            android:text="등산로 검색"
+            android:textAlignment="center"
+            android:textSize="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/et1"
+            tools:layout_editor_absoluteX="-2dp" />
+
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="326dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:layout_weight="0.1"
+            android:inputType="textShortMessage"
+            android:privateImeOptions="defaultInputmode=korean"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <Button
+            android:id="@+id/btnJson"
+            android:layout_width="82dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:layout_weight="0.1"
+            android:text="검색"
+            android:fontFamily="@font/marulight"
+            app:layout_constraintStart_toEndOf="@+id/et1"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavi"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/map"
-        tools:context=".MapsActivity"
-        android:name="com.google.android.gms.maps.SupportMapFragment" />
-
-</LinearLayout>
+        android:layout_height="wrap_content"
+        app:backgroundTint="#b5c7ed"
+        app:itemIconTint="#ffffff"
+        app:itemTextColor="#ffffff"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:menu="@menu/bottom_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>
