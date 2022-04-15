@@ -20,26 +20,43 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
+                                <TextView
+                                    android:id="@+id/tv_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="40dp"
+                                    android:text="반갑습니다 지은님"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/bold"
+                                    android:layout_marginBottom="10dp"
+                                    android:textSize="30dp"
+                                    android:maxLength="10"
+                                    android:ellipsize="end">
+                                </TextView>
+                                <ImageView
+                                    android:id="@+id/iv_edit"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_baseline_edit_24">
+                                </ImageView>
+
+                        </LinearLayout>
                         <TextView
-                            android:id="@+id/tv_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="40dp"
-                            android:text="반갑습니다 지은님"
-                            android:fontFamily="@font/bold"
-                            android:layout_marginBottom="10dp"
-                            android:textSize="30dp">
-                        </TextView>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="40dp"
-                            android:text="등산이 즐거운 주말입니다"
+                            android:textColor="@color/black"
+                            android:text="등산이 즐거운 하루입니다"
                             android:textSize="15dp"
                             android:fontFamily="@font/light"
                             >
                         </TextView>
-
                 </LinearLayout>
         </LinearLayout>
 
@@ -134,98 +151,6 @@
 
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="오늘의 미션"
-                    android:layout_marginLeft="30dp"
-                    android:fontFamily="@font/marubold">
-                </TextView>
-        </LinearLayout>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-                        <FrameLayout
-                            android:layout_width="400dp"
-                            android:layout_height="190dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/home_rectangle">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginTop="10dp"
-                                    android:fontFamily="@font/marubold"
-                                    android:text="북 악 산"
-                                    android:textSize="20dp">
-                                </TextView>
-                                <ImageView
-                                    android:layout_width="400dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/home_mission_ex">
-
-                                </ImageView>
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:layout_width="400dp"
-                            android:layout_height="190dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/home_rectangle">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginTop="10dp"
-                                    android:fontFamily="@font/marubold"
-                                    android:text="관 악 산"
-                                    android:textSize="20dp">
-                                </TextView>
-                                <ImageView
-                                    android:layout_width="400dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/home_mission_ex">
-
-                                </ImageView>
-                        </FrameLayout>
-                        <FrameLayout
-                            android:layout_width="400dp"
-                            android:layout_height="190dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/home_rectangle">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginTop="10dp"
-                                    android:fontFamily="@font/marubold"
-                                    android:text="한 양 도 성"
-                                    android:textSize="20dp">
-                                </TextView>
-                                <ImageView
-                                    android:layout_width="400dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/home_mission_ex">
-
-                                </ImageView>                        </FrameLayout>
-
-                </LinearLayout>
-        </ScrollView>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
