@@ -9,7 +9,7 @@
         android:id="@+id/board"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_content_paste_24"
-        android:title="게시판"/>
+        android:title="미션"/>
 
     <item
         android:id="@+id/walk"

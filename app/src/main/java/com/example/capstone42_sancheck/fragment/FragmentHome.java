@@ -1,10 +1,13 @@
 package com.example.capstone42_sancheck.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +17,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.capstone42_sancheck.R;
+import com.example.capstone42_sancheck.activity.MainActivity;
 import com.example.capstone42_sancheck.object.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -34,6 +38,7 @@ public class FragmentHome extends Fragment {
 
     private TextView tv_name;
     private ImageView iv_profile;
+    private ImageView iv_edit;
 
     @Nullable
     @Override
@@ -42,16 +47,49 @@ public class FragmentHome extends Fragment {
 
         tv_name = view.findViewById(R.id.tv_name);
         iv_profile = view.findViewById(R.id.iv_profile);
+        iv_edit = (ImageView) view.findViewById(R.id.iv_edit);
+
+        iv_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder ad = new AlertDialog.Builder(view.getContext());
+                ad.setIcon(R.mipmap.ic_launcher);
+                ad.setTitle("닉네임 변경");
+                ad.setMessage("변경할 닉네임을 입력하세요.(1~10자)");
+
+                final EditText et = new EditText(view.getContext());
+                ad.setView(et);
+
+                ad.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String result = et.getText().toString();
+                        tv_name.setText(result);
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                ad.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                ad.show();
+
+            }
+        });
 
         auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
 
-        tv_name.setText("반갑습니다 " + user.getDisplayName() + "님");
+        tv_name.setText(user.getDisplayName());
         Glide.with(getActivity()).load(user.getPhotoUrl()).into(iv_profile);
 
         database = FirebaseDatabase.getInstance().getReference();
 
         return view;
+
     }
 
     // user data 추가
