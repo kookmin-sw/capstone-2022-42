@@ -151,6 +151,546 @@
 
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="400dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/marubold"
+                            android:text="주간 걸음 수"
+                            android:textAlignment="gravity"
+                            android:textSize="16dp"
+                            tools:layout_editor_absoluteX="-2dp" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#4CAF50"
+                            android:fontFamily="@font/marubold"
+                            android:text="최근1주"
+                            android:layout_marginBottom="0dp"
+                            android:layout_marginStart="200dp"
+                            />
+
+                        <!--             spinner  sd-->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="40dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/home_box"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/marubold"
+                            android:text="20"
+                            android:textColor="#b5c7ed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:text="일"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="40dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/home_box"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/marubold"
+                            android:text="60"
+                            android:textColor="#b5c7ed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:text="월"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="40dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="15dp"
+
+                    android:background="@drawable/home_box"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/marubold"
+                            android:text="30"
+                            android:textColor="#b5c7ed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:text="화"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="40dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="15dp"
+
+                    android:background="@drawable/home_box"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/marubold"
+                            android:text="50"
+                            android:textColor="#b5c7ed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:text="수"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="40dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="15dp"
+
+                    android:background="@drawable/home_box"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/marubold"
+                            android:text="40"
+                            android:textColor="#b5c7ed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:text="목"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="40dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="15dp"
+
+                    android:background="@drawable/home_box"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/marubold"
+                            android:text="10"
+                            android:textColor="#b5c7ed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:text="금"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="40dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/home_box"
+                    >
+                        <ProgressBar
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="80dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:progress="10"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:text="토"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="400dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    >
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/marubold"
+                            android:gravity="center_vertical"
+                            android:text="묵표지수"
+                            android:textSize="16dp"
+                            />
+
+                        <ProgressBar
+                            android:id="@+id/mokpyoprogressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="80dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:progress="80"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="400dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/marubold"
+                            android:text="예정된 산행"
+                            android:textAlignment="gravity"
+                            android:textSize="20dp"
+                            tools:layout_editor_absoluteX="-2dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                        <FrameLayout
+                            android:layout_width="400dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:background="@drawable/home_rectangle">
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="40dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:background="4CAF50"
+                                    >
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="20dp"
+                                            android:fontFamily="@font/marubold"
+                                            android:text="APR"
+
+                                            android:textColor="#b5c7ed"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginBottom="16dp"
+                                            android:text="14"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="300dp"
+                                    android:layout_height="80dp"
+                                    android:layout_gravity="right"
+                                    android:background="4CAF50"
+                                    >
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="left"
+                                            android:fontFamily="@font/marubold"
+                                            android:text="설악산, 강원도" app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="left"
+                                            android:layout_marginBottom="16dp"
+                                            android:text="09:00"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent" />
+
+                                        <ToggleButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="ToggleButton"
+                                            android:layout_gravity="left"
+                                            tools:layout_editor_absoluteX="209dp"
+                                            tools:layout_editor_absoluteY="18dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintBottom_toEndOf="parent"
+                                            />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="400dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:background="@drawable/home_rectangle">
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="40dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:background="4CAF50"
+                                    >
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="20dp"
+                                            android:fontFamily="@font/marubold"
+                                            android:text="APR"
+
+                                            android:textColor="#b5c7ed"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginBottom="16dp"
+                                            android:text="24"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="300dp"
+                                    android:layout_height="80dp"
+                                    android:layout_gravity="right"
+                                    android:background="4CAF50"
+                                    >
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="left"
+                                            android:fontFamily="@font/marubold"
+                                            android:text="북악산, 서울특별시" app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="left"
+                                            android:layout_marginBottom="16dp"
+                                            android:text="10:00"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent" />
+
+                                        <ToggleButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="ToggleButton"
+                                            android:layout_gravity="left"
+                                            tools:layout_editor_absoluteX="209dp"
+                                            tools:layout_editor_absoluteY="18dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintBottom_toEndOf="parent"
+                                            />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="400dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:background="@drawable/home_rectangle">
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="40dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:background="4CAF50"
+                                    >
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="20dp"
+                                            android:fontFamily="@font/marubold"
+                                            android:text="MAR"
+
+                                            android:textColor="#b5c7ed"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginBottom="16dp"
+                                            android:text="16"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="300dp"
+                                    android:layout_height="80dp"
+                                    android:layout_gravity="right"
+                                    android:background="4CAF50"
+                                    >
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="left"
+                                            android:fontFamily="@font/marubold"
+                                            android:text="지리산, 전라남도" app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="left"
+                                            android:layout_marginBottom="16dp"
+                                            android:text="09:00"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent" />
+
+                                        <ToggleButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="ToggleButton"
+                                            android:layout_gravity="left"
+                                            tools:layout_editor_absoluteX="209dp"
+                                            tools:layout_editor_absoluteY="18dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintBottom_toEndOf="parent"
+                                            />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </FrameLayout>
+                </LinearLayout>
+        </ScrollView>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
