@@ -37,22 +37,22 @@
 
         <EditText
             android:id="@+id/et1"
-            android:layout_width="326dp"
+            android:layout_width="325dp"
             android:layout_height="50dp"
-            android:layout_marginTop="32dp"
-            android:layout_weight="0.1"
+            android:layout_marginTop="10dp"
             android:inputType="textShortMessage"
             android:privateImeOptions="defaultInputmode=korean"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
-            tools:layout_editor_absoluteX="0dp" />
+            tools:layout_editor_absoluteX="14dp" />
 
         <Button
             android:id="@+id/btnJson"
             android:layout_width="82dp"
             android:layout_height="50dp"
-            android:layout_marginTop="32dp"
-            android:layout_weight="0.1"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:text="검색"
+            android:backgroundTint="#b5c7ed"
             android:fontFamily="@font/marulight"
             app:layout_constraintStart_toEndOf="@+id/et1"
             app:layout_constraintTop_toBottomOf="@+id/textView3"/>

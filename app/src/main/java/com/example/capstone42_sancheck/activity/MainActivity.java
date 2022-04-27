@@ -18,8 +18,6 @@ import com.example.capstone42_sancheck.fragment.FragmentRank;
 import com.example.capstone42_sancheck.fragment.FragmentSearch;
 import com.example.capstone42_sancheck.fragment.FragmentWalk;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private FragmentSearch fs;
     private ImageView iv_heart;
     private ImageView iv_alram;
-
 
 
     @Override

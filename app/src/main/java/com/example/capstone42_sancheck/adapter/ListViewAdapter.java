@@ -8,13 +8,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.view.View.OnClickListener;
 
 import com.example.capstone42_sancheck.object.SearchListViewItem;
 
 import java.util.ArrayList;
 
-public class ListViewAdapter extends BaseAdapter {
+public class ListViewAdapter extends BaseAdapter implements OnClickListener {
     private ArrayList<SearchListViewItem> arrayList = new ArrayList<>();
+    private TextView MNTN_NM;
+    private TextView PMNTN_NM;
+    private TextView PMNTN_LT;
+    private TextView PMNTN_TIME;
+    private TextView PMNTN_DFFL;
 
     public ListViewAdapter() {
 
@@ -43,29 +49,45 @@ public class ListViewAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.frag_search_listview_item, viewGroup, false);
         }
 
-        TextView text1 = (TextView) view.findViewById(R.id.M_Name);
-        TextView text2 = (TextView) view.findViewById(R.id.PM_Name);
-        TextView text3 = (TextView) view.findViewById(R.id.LT);
+        MNTN_NM = (TextView) view.findViewById(R.id.M_Name);
+        PMNTN_NM = (TextView) view.findViewById(R.id.PM_Name);
+        PMNTN_LT = (TextView) view.findViewById(R.id.LT);
+        PMNTN_TIME = (TextView) view.findViewById(R.id.TIME);
+        PMNTN_DFFL = (TextView) view.findViewById(R.id.DFFL);
 
         SearchListViewItem searchListViewItem = arrayList.get(i);
 
-        text1.setText(searchListViewItem.getText1());
-        text2.setText(searchListViewItem.getText2());
-        text3.setText(searchListViewItem.getText3().toString() + "km");
+        MNTN_NM.setText(searchListViewItem.getMNTN_NM());
+        PMNTN_NM.setText(searchListViewItem.getPMNTN_NM());
+        PMNTN_LT.setText(searchListViewItem.getPMNTN_LT().toString() + "km");
+        PMNTN_TIME.setText(searchListViewItem.getTime() + "분");
+        PMNTN_DFFL.setText(searchListViewItem.getPMNTN_DFFL());
 
         return view;
     }
 
-    public void addItem(String text1, String text2, Double text3) {
+    public void addItem(int index, String MNTN_NM, String PMNTN_NM, Double PMNTN_LT, Double PMNTN_UPPL,
+                        Double PMNTN_GODN, String PMNTN_DFFL) {
+
         SearchListViewItem searchListViewItem = new SearchListViewItem();
-        searchListViewItem.setText1(text1);
-        searchListViewItem.setText2(text2);
-        searchListViewItem.setText3(text3);
+        searchListViewItem.setIndex(index);
+        searchListViewItem.setMNTN_NM(MNTN_NM);
+        searchListViewItem.setPMNTN_NM(PMNTN_NM);
+        searchListViewItem.setPMNTN_LT(PMNTN_LT);
+        searchListViewItem.setPMNTN_UPPL(PMNTN_UPPL);
+        searchListViewItem.setPMNTN_GODN(PMNTN_GODN);
+        searchListViewItem.setPMNTN_DFFL(PMNTN_DFFL);
 
         arrayList.add(searchListViewItem);
     }
 
     public void clear() {
         arrayList.clear();
+    }
+
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

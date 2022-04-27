@@ -83,7 +83,8 @@ public class FragmentSearch extends Fragment {
 
                         if (jo.optString("MNTN_NM", "NOT VALUE").contains(keyword)) {
                             mountainList.add(mountain);
-                            adapter.addItem(jo.optString("MNTN_NM", "NOT VALUE"), jo.optString("PMNTN_NM", "NOT VALUE"), jo.optDouble("PMNTN_LT", 0));
+                            adapter.addItem(jo.optInt("INDEX", -1), jo.optString("MNTN_NM", "NOT VALUE"), jo.optString("PMNTN_NM", "NOT VALUE"), jo.optDouble("PMNTN_LT", -1),
+                                    jo.optDouble("PMNTN_UPPL", -1), jo.optDouble("PMNTN_GODN", -1), jo.optString("PMNTN_DFFL", "NO_VALUE"));
                         }
                         lv1.setAdapter(adapter);
                     }
