@@ -19,7 +19,7 @@
             android:layout_height="40dp"
             android:layout_marginRight="10dp"
             android:src="@drawable/ic_baseline_favorite_24"
-            app:tint="#b5c7ed" />
+            app:tint="#ff7f7f" />
 
         <ImageView
             android:id="@+id/iv_alram"
@@ -27,7 +27,7 @@
             android:layout_height="40dp"
             android:layout_marginRight="10dp"
             android:src="@drawable/ic_baseline_notifications_none_24"
-            app:tint="#b5c7ed" />
+            app:tint="@color/black" />
     </LinearLayout>
 
     <FrameLayout
