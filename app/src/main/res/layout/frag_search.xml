@@ -1,42 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:contet=".activity.SearchActivity">
+    tools:contet=".activity.SearchActivity"
+    android:orientation="vertical"
+    android:background="@drawable/ic_search_background">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:text="어떤 산을 탈까?"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="40dp" />
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="416dp"
-        android:layout_height="670dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
-
-        <ListView
-            android:id="@+id/lv1"
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:layout_marginTop="4dp"
-            android:layout_weight="0.8"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et1"
-            tools:layout_editor_absoluteX="-2dp" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="418dp"
-            android:layout_height="73dp"
-            android:fontFamily="@font/marubold"
-            android:text="등산로 검색"
-            android:textAlignment="center"
-            android:textSize="40dp"
-            app:layout_constraintBottom_toTopOf="@+id/et1"
-            tools:layout_editor_absoluteX="-2dp" />
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
         <EditText
             android:id="@+id/et1"
+<<<<<<< HEAD
             android:layout_width="325dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -44,9 +36,17 @@
             android:privateImeOptions="defaultInputmode=korean"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             tools:layout_editor_absoluteX="14dp" />
+=======
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:inputType="textShortMessage"
+            android:privateImeOptions="defaultInputmode=korean"
+            />
+>>>>>>> dfa9cc1921f9e572fe74e71bb10c0ea259d47f6f
 
-        <Button
+        <ImageView
             android:id="@+id/btnJson"
+<<<<<<< HEAD
             android:layout_width="82dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -57,16 +57,20 @@
             app:layout_constraintStart_toEndOf="@+id/et1"
             app:layout_constraintTop_toBottomOf="@+id/textView3"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_search"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavi"
+
+    </LinearLayout>
+>>>>>>> dfa9cc1921f9e572fe74e71bb10c0ea259d47f6f
+
+    <ListView
+        android:id="@+id/lv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:backgroundTint="#b5c7ed"
-        app:itemIconTint="#ffffff"
-        app:itemTextColor="#ffffff"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:menu="@menu/bottom_menu" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginTop="4dp"
+        android:layout_weight="0.8"
+        />
+</LinearLayout>
