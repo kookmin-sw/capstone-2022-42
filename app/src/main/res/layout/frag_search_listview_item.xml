@@ -14,7 +14,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/marulight"
-            android:textSize="30dp"
+            android:textSize="15dp"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <RelativeLayout
@@ -28,7 +29,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="0dp"
                 android:fontFamily="@font/marulight"
-                android:textSize="18dp" />
+                android:textSize="10dp" />
 
             <TextView
                 android:id="@+id/LT"
@@ -37,7 +38,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="23dp"
                 android:fontFamily="@font/marulight"
-                android:textSize="18dp" />
+                android:textSize="10dp" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

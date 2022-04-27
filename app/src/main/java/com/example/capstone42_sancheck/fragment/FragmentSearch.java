@@ -1,12 +1,14 @@
 package com.example.capstone42_sancheck.fragment;
 
 import android.content.res.AssetManager;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -31,7 +33,7 @@ import java.util.List;
 public class FragmentSearch extends Fragment {
     private View view;
     private ListView lv1;
-    private Button btn1;
+    private ImageView btn1;
     private EditText et1;
     private ListViewAdapter adapter;
 
@@ -41,7 +43,7 @@ public class FragmentSearch extends Fragment {
         view = inflater.inflate(R.layout.frag_search, container, false);
 
         lv1 = (ListView) view.findViewById(R.id.lv1);
-        btn1 = (Button) view.findViewById(R.id.btnJson);
+        btn1 = (ImageView) view.findViewById(R.id.btnJson);
         et1 = (EditText) view.findViewById(R.id.et1);
         adapter = new ListViewAdapter();
 
