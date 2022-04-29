@@ -12,7 +12,8 @@
         android:layout_marginBottom="10dp"
         android:layout_weight="1"
         android:background="@drawable/listviewitem_roundcorner"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/item">
 
         <TextView
             android:id="@+id/M_Name"
@@ -78,7 +79,7 @@
                 android:layout_toEndOf="@+id/TIME"
                 android:layout_weight="1"
                 android:fontFamily="@font/marulight"
-                android:textSize="10dp" />
+                android:textSize="18dp" />
         </RelativeLayout>
 
     </LinearLayout>

@@ -8,13 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
 
 import com.example.capstone42_sancheck.object.SearchListViewItem;
 
 import java.util.ArrayList;
 
-public class ListViewAdapter extends BaseAdapter implements OnClickListener {
+public class ListViewAdapter extends BaseAdapter {
     private ArrayList<SearchListViewItem> arrayList = new ArrayList<>();
     private TextView MNTN_NM;
     private TextView PMNTN_NM;
@@ -67,7 +66,7 @@ public class ListViewAdapter extends BaseAdapter implements OnClickListener {
     }
 
     public void addItem(int index, String MNTN_NM, String PMNTN_NM, Double PMNTN_LT, Double PMNTN_UPPL,
-                        Double PMNTN_GODN, String PMNTN_DFFL) {
+                        Double PMNTN_GODN, String PMNTN_DFFL, String START_PNT, String END_PNT) {
 
         SearchListViewItem searchListViewItem = new SearchListViewItem();
         searchListViewItem.setIndex(index);
@@ -77,17 +76,13 @@ public class ListViewAdapter extends BaseAdapter implements OnClickListener {
         searchListViewItem.setPMNTN_UPPL(PMNTN_UPPL);
         searchListViewItem.setPMNTN_GODN(PMNTN_GODN);
         searchListViewItem.setPMNTN_DFFL(PMNTN_DFFL);
+        searchListViewItem.setSTART_PNT(START_PNT);
+        searchListViewItem.setEND_PNT(END_PNT);
 
         arrayList.add(searchListViewItem);
     }
 
     public void clear() {
         arrayList.clear();
-    }
-
-
-    @Override
-    public void onClick(View view) {
-
     }
 }

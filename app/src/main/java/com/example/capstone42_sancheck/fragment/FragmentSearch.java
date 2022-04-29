@@ -1,12 +1,12 @@
 package com.example.capstone42_sancheck.fragment;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -16,8 +16,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.capstone42_sancheck.R;
+import com.example.capstone42_sancheck.activity.SearchActivity;
 import com.example.capstone42_sancheck.adapter.ListViewAdapter;
 import com.example.capstone42_sancheck.object.Mountain;
+import com.example.capstone42_sancheck.object.SearchListViewItem;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -86,13 +88,25 @@ public class FragmentSearch extends Fragment {
                         if (jo.optString("MNTN_NM", "NOT VALUE").contains(keyword)) {
                             mountainList.add(mountain);
                             adapter.addItem(jo.optInt("INDEX", -1), jo.optString("MNTN_NM", "NOT VALUE"), jo.optString("PMNTN_NM", "NOT VALUE"), jo.optDouble("PMNTN_LT", -1),
-                                    jo.optDouble("PMNTN_UPPL", -1), jo.optDouble("PMNTN_GODN", -1), jo.optString("PMNTN_DFFL", "NO_VALUE"));
+                                    jo.optDouble("PMNTN_UPPL", -1), jo.optDouble("PMNTN_GODN", -1), jo.optString("PMNTN_DFFL", "NO_VALUE"),
+                                    jo.optString("START_PNT", "NOT VALUE"), jo.optString("END_PNT", "NOT VALUE"));
                         }
                         lv1.setAdapter(adapter);
                     }
                 } catch (IOException | JSONException e) {
                     e.printStackTrace();
                 }
+            }
+        });
+        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                SearchListViewItem item = (SearchListViewItem) adapter.getItem(i);
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                intent.putExtra("m_name", item.getMNTN_NM());
+                intent.putExtra("start", item.getSTART_PNT());
+                intent.putExtra("end", item.getEND_PNT());
+                startActivity(intent);
             }
         });
         return view;

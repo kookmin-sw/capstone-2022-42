@@ -8,19 +8,19 @@ public class SearchListViewItem {
     private Double PMNTN_UPPL; // 상행 시간
     private Double PMNTN_GODN; // 하행 시간
     private String PMNTN_DFFL; // 난이도
+    private String START_PNT; // 시작점
+    private String END_PNT; // 도착점
 
     public int getIndex() { return index; }
-    public String getMNTN_NM() {
-        return MNTN_NM;
-    }
-    public String getPMNTN_NM() {
-        return PMNTN_NM;
-    }
+    public String getMNTN_NM() { return MNTN_NM; }
+    public String getPMNTN_NM() { return PMNTN_NM; }
     public Double getPMNTN_LT() { return PMNTN_LT; }
     public Double getPMNTN_UPPL() { return PMNTN_UPPL; }
     public Double getPMNTN_GODN() { return PMNTN_GODN; }
     public String getPMNTN_DFFL() { return PMNTN_DFFL; }
     public int getTime() { return (int)(PMNTN_GODN + PMNTN_UPPL); }
+    public String getSTART_PNT() { return START_PNT; }
+    public String getEND_PNT() { return END_PNT; }
 
     public void setIndex(int index) {
         this.index = index;
@@ -41,4 +41,6 @@ public class SearchListViewItem {
     public void setPMNTN_UPPL(Double PMNTN_UPPL) { this.PMNTN_UPPL = PMNTN_UPPL; }
     public void setPMNTN_GODN(Double PMNTN_GODN) { this.PMNTN_GODN = PMNTN_GODN; }
     public void setPMNTN_DFFL(String PMNTN_DFFL) { this.PMNTN_DFFL = PMNTN_DFFL; }
+    public void setSTART_PNT(String START_PNT) { this.START_PNT = START_PNT; }
+    public void setEND_PNT(String END_PNT) { this.END_PNT = END_PNT; }
 }

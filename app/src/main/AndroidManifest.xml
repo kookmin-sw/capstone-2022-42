@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone42_Sancheck">
         <activity
+            android:name=".activity.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.AlramActivity"
             android:exported="false" />
         <!-- 구글 맵 관련 meta-data -->
@@ -39,12 +42,7 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true" />
-
-        <activity
-            android:name=".activity.CartActivity">
-
-        </activity>
-
+        <activity android:name=".activity.CartActivity"></activity>
     </application>
 
 </manifest>

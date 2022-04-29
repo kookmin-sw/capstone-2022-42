@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:contet=".activity.SearchActivity"
+    tools:contet=".FragmentSearch"
     android:orientation="vertical"
     android:background="@drawable/ic_search_background">
 
@@ -28,43 +28,20 @@
         android:gravity="center">
         <EditText
             android:id="@+id/et1"
-<<<<<<< HEAD
-            android:layout_width="325dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:inputType="textShortMessage"
-            android:privateImeOptions="defaultInputmode=korean"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            tools:layout_editor_absoluteX="14dp" />
-=======
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:inputType="textShortMessage"
             android:privateImeOptions="defaultInputmode=korean"
             />
->>>>>>> dfa9cc1921f9e572fe74e71bb10c0ea259d47f6f
 
         <ImageView
             android:id="@+id/btnJson"
-<<<<<<< HEAD
-            android:layout_width="82dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:text="검색"
-            android:backgroundTint="#b5c7ed"
-            android:fontFamily="@font/marulight"
-            app:layout_constraintStart_toEndOf="@+id/et1"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-=======
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_search"/>
 
 
     </LinearLayout>
->>>>>>> dfa9cc1921f9e572fe74e71bb10c0ea259d47f6f
 
     <ListView
         android:id="@+id/lv1"
