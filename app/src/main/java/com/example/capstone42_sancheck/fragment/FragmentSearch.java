@@ -54,7 +54,7 @@ public class FragmentSearch extends Fragment {
             public void onClick(View view) {
                 adapter.clear();
                 AssetManager assetManager = getResources().getAssets();
-                String keyword = et1.getText().toString();
+                String keyword = et1.getText().toString().replace(" ", "");
 
                 try {
                     InputStream is = assetManager.open("jsons/seoul_mountain.json");
@@ -104,6 +104,10 @@ public class FragmentSearch extends Fragment {
                 SearchListViewItem item = (SearchListViewItem) adapter.getItem(i);
                 Intent intent = new Intent(getContext(), SearchActivity.class);
                 intent.putExtra("m_name", item.getMNTN_NM());
+                intent.putExtra("pm_name", item.getPMNTN_NM());
+                intent.putExtra("lt", item.getPMNTN_LT());
+                intent.putExtra("pm_dffl", item.getPMNTN_DFFL());
+                intent.putExtra("pm_time", item.getTime());
                 intent.putExtra("start", item.getSTART_PNT());
                 intent.putExtra("end", item.getEND_PNT());
                 startActivity(intent);
