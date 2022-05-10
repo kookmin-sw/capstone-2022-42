@@ -14,37 +14,52 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mountain_name" />
+        app:layout_constraintTop_toBottomOf="@+id/info" />
 
     <TextView
         android:id="@+id/mountain_name"
         android:layout_width="200dp"
-        android:layout_height="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/bold"
-        android:textColor="@color/black"
         android:padding="10dp"
-        android:textSize="60dp"/>
+        android:textColor="@color/black"
+        android:textSize="70dp" />
 
-    <TextView
-        android:id="@+id/pm_name"
-        android:layout_width="150dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/bold"
-        android:padding="10dp"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@+id/mountain_name"
-        tools:layout_editor_absoluteY="0dp" />
+    <RelativeLayout
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/lt"
-        android:layout_width="150dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/bold"
-        android:padding="10dp"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@+id/mountain_name"
-        app:layout_constraintTop_toBottomOf="@+id/pm_name" />
+        <TextView
+            android:id="@+id/pm_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/bold"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/lt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_toEndOf="@+id/pm_name"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/bold"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            app:layout_constraintStart_toEndOf="@+id/pm_name" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

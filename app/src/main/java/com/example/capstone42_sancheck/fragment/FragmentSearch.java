@@ -57,7 +57,7 @@ public class FragmentSearch extends Fragment {
                 String keyword = et1.getText().toString().replace(" ", "");
 
                 try {
-                    InputStream is = assetManager.open("jsons/seoul_mountain.json");
+                    InputStream is = assetManager.open("jsons/mountain.json");
                     InputStreamReader isr = new InputStreamReader(is);
                     BufferedReader reader = new BufferedReader(isr);
 

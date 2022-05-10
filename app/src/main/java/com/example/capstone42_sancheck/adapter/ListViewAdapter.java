@@ -20,6 +20,7 @@ public class ListViewAdapter extends BaseAdapter {
     private TextView PMNTN_LT;
     private TextView PMNTN_TIME;
     private TextView PMNTN_DFFL;
+    private TextView PEOPLE;
 
     public ListViewAdapter() {
 
@@ -53,6 +54,7 @@ public class ListViewAdapter extends BaseAdapter {
         PMNTN_LT = (TextView) view.findViewById(R.id.LT);
         PMNTN_TIME = (TextView) view.findViewById(R.id.TIME);
         PMNTN_DFFL = (TextView) view.findViewById(R.id.DFFL);
+        PEOPLE = (TextView) view.findViewById(R.id.PEOPLE);
 
         SearchListViewItem searchListViewItem = arrayList.get(i);
 
@@ -61,6 +63,7 @@ public class ListViewAdapter extends BaseAdapter {
         PMNTN_LT.setText(searchListViewItem.getPMNTN_LT().toString() + "km");
         PMNTN_TIME.setText(searchListViewItem.getTime() + "분");
         PMNTN_DFFL.setText(searchListViewItem.getPMNTN_DFFL());
+        PEOPLE.setText(searchListViewItem.getPEOPLE() + "명 등산중!");
 
         return view;
     }

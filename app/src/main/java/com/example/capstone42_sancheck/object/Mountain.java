@@ -40,6 +40,7 @@ public class Mountain {
         return diff;
     }
 
+
     public void setDrawableId(int drawableId){this.drawableId = drawableId;}
 
     public void setIndex(int index) {
