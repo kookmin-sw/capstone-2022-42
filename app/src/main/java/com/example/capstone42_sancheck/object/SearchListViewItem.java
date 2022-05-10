@@ -10,6 +10,7 @@ public class SearchListViewItem {
     private String PMNTN_DFFL; // 난이도
     private String START_PNT; // 시작점
     private String END_PNT; // 도착점
+    private int PEOPLE; // 사람 수
 
     public int getIndex() { return index; }
     public String getMNTN_NM() { return MNTN_NM; }
@@ -21,6 +22,7 @@ public class SearchListViewItem {
     public int getTime() { return (int)(PMNTN_GODN + PMNTN_UPPL); }
     public String getSTART_PNT() { return START_PNT; }
     public String getEND_PNT() { return END_PNT; }
+    public int getPEOPLE() { return PEOPLE; }
 
     public void setIndex(int index) {
         this.index = index;
@@ -43,4 +45,5 @@ public class SearchListViewItem {
     public void setPMNTN_DFFL(String PMNTN_DFFL) { this.PMNTN_DFFL = PMNTN_DFFL; }
     public void setSTART_PNT(String START_PNT) { this.START_PNT = START_PNT; }
     public void setEND_PNT(String END_PNT) { this.END_PNT = END_PNT; }
+    public void setPEOPLE(int PEOPLE) { this.PEOPLE = PEOPLE; }
 }

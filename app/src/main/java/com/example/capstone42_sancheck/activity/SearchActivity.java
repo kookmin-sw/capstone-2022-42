@@ -2,7 +2,9 @@ package com.example.capstone42_sancheck.activity;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +24,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.capstone42_sancheck.R;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import org.w3c.dom.Text;
 
@@ -127,19 +130,6 @@ public class SearchActivity extends AppCompatActivity implements
             }
         });
     }
-//    다수 마커 찍기 ( 경로 )
-//    public void manyMarker() {
-//        for (int idx = 0; idx < 2; idx++) {
-//            MarkerOptions makerOptions = new MarkerOptions();
-//            makerOptions
-//                    .position(new LatLng(37.52487, 126.92723))
-//                    .title("마커" + idx);
-//
-//            mMap.addMarker(makerOptions);
-//        }
-//        mMap.setOnMarkerClickListener(markerClickListener);
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(37.52487, 126.92723)));
-//    }
 
     //마커 클릭 리스너
     GoogleMap.OnMarkerClickListener markerClickListener = new GoogleMap.OnMarkerClickListener() {
