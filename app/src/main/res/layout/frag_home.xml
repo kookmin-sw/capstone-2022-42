@@ -72,6 +72,7 @@
                     android:background="@drawable/home_box"
                     >
                         <TextView
+                            android:id="@+id/tv_totalSteps"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -100,6 +101,7 @@
                     android:background="@drawable/home_box"
                     >
                         <TextView
+                            android:id="@+id/tv_score"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -116,7 +118,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="16dp"
-                            android:text="Km"
+                            android:text="Score"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
@@ -127,6 +129,7 @@
                     android:background="@drawable/home_box"
                     >
                         <TextView
+                            android:id="@+id/tv_rank"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -143,7 +146,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="16dp"
-                            android:text="Kcal"
+                            android:text="Ranking"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
@@ -201,9 +204,11 @@
                     android:layout_marginRight="15dp"
                     android:background="@drawable/home_box"
                     >
+
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_walkSun"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="20dp"
                             android:fontFamily="@font/marubold"
@@ -230,6 +235,7 @@
                     android:background="@drawable/home_box"
                     >
                         <TextView
+                            android:id="@+id/tv_walkMon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -259,6 +265,7 @@
                     android:background="@drawable/home_box"
                     >
                         <TextView
+                            android:id="@+id/tv_walkTue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -288,6 +295,7 @@
                     android:background="@drawable/home_box"
                     >
                         <TextView
+                            android:id="@+id/tv_walkWen"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -317,6 +325,7 @@
                     android:background="@drawable/home_box"
                     >
                         <TextView
+                            android:id="@+id/tv_walkThu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -346,6 +355,7 @@
                     android:background="@drawable/home_box"
                     >
                         <TextView
+                            android:id="@+id/tv_walkFri"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -382,6 +392,19 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             android:progress="10"/>
+
+                        <TextView
+                            android:id="@+id/tv_walkSat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/marubold"
+                            android:text="10"
+                            android:textColor="#b5c7ed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:layout_width="wrap_content"

@@ -31,8 +31,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class FragSignIn3 extends Fragment {
     private View view;
@@ -53,7 +60,7 @@ public class FragSignIn3 extends Fragment {
         btn_google = view.findViewById(R.id.btn_google);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(getString(R.string.default_web_client_id)) // default_web_client_id 에러: 앱 한 번 실행 후에 사라짐
                 .requestEmail()
                 .build();
         googleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
@@ -107,8 +114,7 @@ public class FragSignIn3 extends Fragment {
 
                             final String uid = user.getUid();
 
-                            writeNewUser(uid, user);
-                            updateUI(user);
+                            readUser(uid, user);
                         } else{ // 로그인 실패
                             Toast.makeText(getActivity(), "로그인 성공", Toast.LENGTH_SHORT).show();
                             updateUI(null);
@@ -125,9 +131,43 @@ public class FragSignIn3 extends Fragment {
         }
     }
 
+    // 기존 user 정보 있는 지 검색
+    private void readUser(String uid, FirebaseUser user){
+        database = FirebaseDatabase.getInstance().getReference();
+
+        database.child("Users").child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.getValue(User.class) != null){
+                    Log.d("readUser", "재로그인!");
+                    updateUI(user);
+                } else{
+                    Log.d("readUser", "첫 로그인: writeNewUser() 함수로 이동");
+                    writeNewUser(uid, user);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("readUser", "로그인 정보 검색 실패");
+            }
+        });
+    }
+
     // user data 추가
     private void writeNewUser(String uid, FirebaseUser user){
-        User member = new User(user.getDisplayName(), 100, 0);
+        List<Integer> trailComplited = new ArrayList<>(Arrays.asList(1, 3));
+        List<Integer> trailPlan = new ArrayList<>(Arrays.asList(4));
+
+        List<Integer> missionDaily = new ArrayList<>();
+        List<Integer> missionWeekly = new ArrayList<>();
+        List<Integer> missionMonthly = new ArrayList<>();
+
+        // 사용자 rank 정보 초기화 어떻게 할지 적용 필요
+        User member = new User(user.getDisplayName(), 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0,
+                trailComplited, trailPlan,
+                missionDaily, missionWeekly, missionMonthly);
 
         database = FirebaseDatabase.getInstance().getReference();
 
