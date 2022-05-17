@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.capstone42_sancheck.R;
 import com.example.capstone42_sancheck.activity.MainActivity;
+import com.example.capstone42_sancheck.activity.QuestionActivity;
 import com.example.capstone42_sancheck.activity.SignInActivity;
 import com.example.capstone42_sancheck.object.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -125,7 +126,7 @@ public class FragSignIn3 extends Fragment {
 
     private void updateUI(FirebaseUser user){
         if(user != null){
-            Intent intent = new Intent(getActivity(), MainActivity.class);
+            Intent intent = new Intent(getActivity(), QuestionActivity.class);
             startActivity(intent);
             getActivity().finish();
         }

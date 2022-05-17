@@ -7,6 +7,8 @@
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/gray_radius.xml" value="0.1785" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/grey_radius.xml" value="0.1785" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/home_box.xml" value="0.156" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1785" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/ic_baseline_comment_24.xml" value="0.1785" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/ic_baseline_content_paste_24.xml" value="0.1" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1785" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1785" />
@@ -18,6 +20,8 @@
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/activity_cart.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/activity_cart_recycleriew_item.xml" value="0.2390625" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/activity_question.xml" value="0.264" />
+        <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/activity_search.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/frag_board.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/layout/frag_home.xml" value="0.264" />
