@@ -42,22 +42,26 @@
 
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/rg_level">
+
                 <RadioButton
                     android:id="@+id/easy_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="쉬움"/>
+                    android:text="쉬움" />
+
                 <RadioButton
                     android:id="@+id/normal_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="보통"/>
+                    android:text="보통" />
+
                 <RadioButton
                     android:id="@+id/hard_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="어려움"/>
+                    android:text="어려움" />
             </RadioGroup>
 
             <TextView
@@ -69,45 +73,53 @@
 
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/rg_time">
 
                 <RadioButton
-
+                    android:id="@+id/oneHour_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1시간" />
 
                 <RadioButton
+                    android:id="@+id/twoHour_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2시간" />
 
                 <RadioButton
+                    android:id="@+id/threeHour_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3시간" />
 
                 <RadioButton
+                    android:id="@+id/fourHour_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4시간" />
 
                 <RadioButton
+                    android:id="@+id/fiveHour_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5시간" />
 
                 <RadioButton
+                    android:id="@+id/sixHour_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6시간" />
 
                 <RadioButton
+                    android:id="@+id/sevenHour_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="7시간" />
 
                 <RadioButton
+                    android:id="@+id/eightHour_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8시간" />
@@ -121,16 +133,20 @@
                 android:textColor="@color/black"/>
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/rg_distance">
                 <RadioButton
+                    android:id="@+id/oneKm_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1km"/>
                 <RadioButton
+                    android:id="@+id/twoKm_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2km"/>
                 <RadioButton
+                    android:id="@+id/threeKm_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3km"/>
