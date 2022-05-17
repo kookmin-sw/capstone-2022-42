@@ -9,20 +9,22 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Capstone42_Sancheck"
-        android:hardwareAccelerated="false"
-        android:largeHeap="true">
+        android:theme="@style/Theme.Capstone42_Sancheck">
+        <activity
+            android:name=".activity.QuestionActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.SearchActivity"
             android:exported="false" />
         <activity
             android:name=".activity.AlramActivity"
-            android:exported="false" />
-        <!-- 구글 맵 관련 meta-data -->
+            android:exported="false" /> <!-- 구글 맵 관련 meta-data -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDOazzDcxjMnH9jod9CXqbhn5S_XwztK4I" />
@@ -44,7 +46,7 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true" />
-        <activity android:name=".activity.CartActivity"></activity>
+        <activity android:name=".activity.CartActivity" />
     </application>
 
 </manifest>

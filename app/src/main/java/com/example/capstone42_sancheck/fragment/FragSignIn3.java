@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.capstone42_sancheck.R;
 import com.example.capstone42_sancheck.activity.MainActivity;
+import com.example.capstone42_sancheck.activity.QuestionActivity;
 import com.example.capstone42_sancheck.activity.SignInActivity;
 import com.example.capstone42_sancheck.object.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -58,6 +60,7 @@ public class FragSignIn3 extends Fragment {
 
         auth = FirebaseAuth.getInstance();
         btn_google = view.findViewById(R.id.btn_google);
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id)) // default_web_client_id 에러: 앱 한 번 실행 후에 사라짐
@@ -125,7 +128,7 @@ public class FragSignIn3 extends Fragment {
 
     private void updateUI(FirebaseUser user){
         if(user != null){
-            Intent intent = new Intent(getActivity(), MainActivity.class);
+            Intent intent = new Intent(getActivity(), QuestionActivity.class);
             startActivity(intent);
             getActivity().finish();
         }
