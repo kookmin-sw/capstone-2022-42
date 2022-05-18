@@ -159,8 +159,8 @@ public class FragSignIn3 extends Fragment {
 
     // user data 추가
     private void writeNewUser(String uid, FirebaseUser user){
-        List<Integer> trailComplited = new ArrayList<>(Arrays.asList(1, 3));
-        List<Integer> trailPlan = new ArrayList<>(Arrays.asList(4));
+        List<Integer> trailComplited = new ArrayList<>(Arrays.asList(1, 3)); // 나중에 초기화값 []로 수정
+        List<Integer> trailPlan = new ArrayList<>(Arrays.asList(4)); // 나중에 초기화값 []로 수정
 
         List<Integer> missionDaily = new ArrayList<>();
         List<Integer> missionWeekly = new ArrayList<>();

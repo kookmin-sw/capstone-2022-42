@@ -8,6 +8,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,15 @@ import androidx.fragment.app.Fragment;
 
 import com.example.capstone42_sancheck.R;
 import com.example.capstone42_sancheck.activity.MainActivity;
+import com.example.capstone42_sancheck.object.User;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class FragmentWalk extends Fragment implements SensorEventListener {
     private View view;
@@ -31,6 +41,9 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
     private TextView btn_reset;
 
     int steps = 0;
+
+    private DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    private FirebaseAuth auth;
 
     @Nullable
     @Override
@@ -52,11 +65,52 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
             Toast.makeText(getActivity().getApplicationContext(), "No Step Sensor", Toast.LENGTH_SHORT).show();
         }
 
-        btn_reset.setOnClickListener(new View.OnClickListener() {
+        auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+
+        final String uid = user.getUid();
+
+        database.child("Users").child(uid).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                steps = 0;
-                tv_sensor.setText(String.valueOf(steps));
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.getValue(User.class) != null){
+                    User post = snapshot.getValue(User.class);
+
+                    if (steps != post.getWalkDaily()){
+                        post.setWalkDaily(steps);
+                        database.child("Users").child(uid).child("walkDaily").setValue(steps)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Log.d("FragmentWalk: walkDaily", "유저 정보 수정 확인!");
+                                    }
+                                });
+                    }
+                    tv_sensor.setText(String.valueOf(steps));
+
+                    btn_reset.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            steps = 0;
+                            post.setWalkDaily(0);
+                            database.child("Users").child(uid).child("walkDaily").setValue(steps)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Log.d("FragmentWalk: walkReset", "걷기 정보 리셋");
+                                        }
+                                    });
+                            tv_sensor.setText(String.valueOf(steps));
+                        }
+                    });
+                } else{
+                    Log.d("FragmentWalk", "유저 정보 없음...");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("FragmentWalk", "유저 정보 불러오기 실패ㅠ");
             }
         });
 

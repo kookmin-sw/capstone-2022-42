@@ -133,7 +133,7 @@ public class FragmentHome extends Fragment {
                         }
                     });
 
-                    Glide.with(getActivity())
+                    Glide.with(view)
                             .load(user.getPhotoUrl())
                             .error(R.drawable.profile)
                             .into(iv_profile);
@@ -150,7 +150,7 @@ public class FragmentHome extends Fragment {
                     tv_walkFri.setText(String.valueOf(post.getWalkFri()));
                     tv_walkSat.setText(String.valueOf(post.getWalkSat()));
 
-                    mokpyoprogressBar.setProgress((post.getWalkDaily() / 10000) * 100);
+                    mokpyoprogressBar.setProgress(post.getWalkDaily());
                 } else{
                     Log.d("FragmentHome", "유저 정보 없음...");
                 }

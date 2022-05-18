@@ -28,6 +28,9 @@ public class User {
     public List<Integer> missionWeekly;
     public List<Integer> missionMonthly;
 
+    // 출석 체크
+//    public List<Integer> dateCheck;
+
     public User() {
 
     }

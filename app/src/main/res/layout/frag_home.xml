@@ -207,8 +207,8 @@
 
                         <TextView
                             android:id="@+id/tv_walkSun"
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="20dp"
                             android:fontFamily="@font/marubold"
@@ -447,11 +447,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="80dp"
+                            android:max="10000"
+                            android:progress="80"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            android:progress="80"/>
+                            app:layout_constraintTop_toTopOf="parent" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -473,7 +474,7 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:fontFamily="@font/marubold"
-                            android:text="예정된 산행"
+                            android:text="내 등산 기록"
                             android:textAlignment="gravity"
                             android:textSize="20dp"
                             tools:layout_editor_absoluteX="-2dp" />
