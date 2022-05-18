@@ -1,0 +1,96 @@
+{
+  "project_info": {
+    "project_number": "894927175835",
+    "firebase_url": "https://capstone42-sancheck-96817-default-rtdb.firebaseio.com",
+    "project_id": "capstone42-sancheck-96817",
+    "storage_bucket": "capstone42-sancheck-96817.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894927175835:android:376532b0db4efa3047863e",
+        "android_client_info": {
+          "package_name": "com.example.capstone42_sancheck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894927175835-46qkq5q0g267gvgaj3jsol33gr37o8rh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.capstone42_sancheck",
+            "certificate_hash": "68a9eb6e70aaa9a013dcc33ea9e210b29fd51218"
+          }
+        },
+        {
+          "client_id": "894927175835-4eg9u50vv0u2hqnfu5cm6u50bhhc4m7b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.capstone42_sancheck",
+            "certificate_hash": "3a280ae3a1eb0b8d441b32ca4d8d4deeec79b675"
+          }
+        },
+        {
+          "client_id": "894927175835-5udrooot04k8gsrtha8h491554vhtct4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.capstone42_sancheck",
+            "certificate_hash": "ff5d027318a20c78d6c420cefe4d4ca4fe46760b"
+          }
+        },
+        {
+          "client_id": "894927175835-845i56n6u5r4a745lc9k4tke3ig8k0v5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.capstone42_sancheck",
+            "certificate_hash": "b1ac1e77d0d5c88c74bcaacb852f114603efe5f4"
+          }
+        },
+        {
+          "client_id": "894927175835-eqa991u3ba2koe373q4d2a3vnfj2c6q5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.capstone42_sancheck",
+            "certificate_hash": "fd00fe601eaebbe5ccab60f4540460b473b4a7c9"
+          }
+        },
+        {
+          "client_id": "894927175835-r97fmeej38tk9voelnd1graf4drnakod.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.capstone42_sancheck",
+            "certificate_hash": "ff7f1db7d56b6a8ad8a4cf155d592eae42d766f2"
+          }
+        },
+        {
+          "client_id": "894927175835-ukdcuao6mg3fpn3pqo0afj7o9lgkdmum.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.capstone42_sancheck",
+            "certificate_hash": "b5672abb86521f144f475f093c370662b30fb955"
+          }
+        },
+        {
+          "client_id": "894927175835-mf1km45blq086b1i8hga88n03qpdl5g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeCWqCwWfGXzGjwnjAkoIM_bBghp52gdw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894927175835-mf1km45blq086b1i8hga88n03qpdl5g1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
