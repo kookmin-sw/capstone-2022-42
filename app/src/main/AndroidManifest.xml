@@ -29,6 +29,11 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDOazzDcxjMnH9jod9CXqbhn5S_XwztK4I" />
 
+        <!-- 네이버 맵 관련 meta-data -->
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="wzcufpwjcc" />
+
         <activity
             android:name=".activity.SignInActivity"
             android:exported="true" />

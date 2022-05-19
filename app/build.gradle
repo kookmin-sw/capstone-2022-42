@@ -27,10 +27,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -64,7 +68,16 @@ dependencies {
     /** 구글 맵 관련 gradle **/
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
     implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation 'com.google.maps:google-maps-services:0.1.3'
     implementation 'com.github.pedroSG94:AutoPermissions:1.0.3'
+
+    /** 네이버 맵 관련 gradle **/
+    implementation 'com.naver.maps:map-sdk:3.15.0'
+    implementation('com.naver.maps:map-sdk:3.15.0') {
+        exclude group: 'com.android.support'
+    }
+
+    implementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
 
     /** Snackbar 관련 gradle **/
     implementation 'com.google.android.material:material:1.7.0-alpha01'
