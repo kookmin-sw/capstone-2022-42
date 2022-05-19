@@ -1,6 +1,10 @@
 package com.example.capstone42_sancheck.object;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class User {
     public String name;
@@ -191,8 +195,21 @@ public class User {
         return trailPlan;
     }
 
-    public void setTrailPlanAdd(int idx, List<Integer> trailPlan){
+    public void setTrailPlanAdd(int idx, List<Integer> trailPlan) {
+        // 중복 제거
         trailPlan.add(idx);
+        List<Integer> list = new ArrayList<>();
+        Set<Integer> uniqueValues = new HashSet<>();
+        for (Integer integer : trailPlan) {
+            if (uniqueValues.add(integer)) {
+                list.add(integer);
+            }
+        }
+        this.trailPlan = list;
+    }
+
+    public void setTrailPlanDelete(int idx, List<Integer> trailPlan) {
+        trailPlan.remove(idx);
         this.trailPlan = trailPlan;
     }
 

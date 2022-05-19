@@ -19,26 +19,31 @@
         android:textAlignment="center"
         android:textSize="40dp" />
 
-
     <LinearLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center">
+
         <EditText
             android:id="@+id/et1"
-            android:layout_width="300dp"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:inputType="textShortMessage"
-            android:privateImeOptions="defaultInputmode=korean"
-            />
+            android:privateImeOptions="defaultInputmode=korean" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
 
         <ImageView
             android:id="@+id/btnJson"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_search"/>
+            android:src="@drawable/ic_search" />
 
 
     </LinearLayout>
@@ -49,5 +54,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_weight="0.8"
+        android:textFilterEnabled="true"
         />
 </LinearLayout>

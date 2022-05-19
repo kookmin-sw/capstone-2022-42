@@ -27,18 +27,10 @@ public class SearchListViewItem {
     public void setIndex(int index) {
         this.index = index;
     }
-
     public void setMNTN_NM(String MNTN_NM) {
         this.MNTN_NM = MNTN_NM;
     }
-
-    public void setPMNTN_NM(String PMNTN_NM) {
-        if (PMNTN_NM.equals("null"))
-            this.PMNTN_NM = " ";
-        else
-            this.PMNTN_NM = PMNTN_NM;
-    }
-
+    public void setPMNTN_NM(String PMNTN_NM) { this.PMNTN_NM = PMNTN_NM; }
     public void setPMNTN_LT(Double PMNTN_LT) { this.PMNTN_LT = PMNTN_LT; }
     public void setPMNTN_UPPL(Double PMNTN_UPPL) { this.PMNTN_UPPL = PMNTN_UPPL; }
     public void setPMNTN_GODN(Double PMNTN_GODN) { this.PMNTN_GODN = PMNTN_GODN; }

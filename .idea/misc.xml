@@ -28,20 +28,23 @@
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/menu/bottom_menu.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1785" />
         <entry key="..\:/Users/82109/Desktop/Capstone2022/capstone-2022-42/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1785" />
+        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.3445" />
+        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.104" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/drawable/listviewitem_roundcorner.xml" value="0.167" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_alram.xml" value="0.2078125" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_cart.xml" value="0.2078125" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_cart_recycleriew_item.xml" value="0.2078125" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_main.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_search.xml" value="0.1" />
+        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_search1.xml" value="0.1" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_search2.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_sign_in.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_home.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_rank.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_rank2.xml" value="0.2644927536231884" />
-        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_search.xml" value="0.1" />
+        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_search.xml" value="0.25" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_search1.xml" value="0.11594202898550725" />
-        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_search_listview_item.xml" value="0.25" />
+        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_search_listview_item.xml" value="0.1" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_sign_in1.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_sign_in3.xml" value="0.2644927536231884" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_walk.xml" value="0.2644927536231884" />

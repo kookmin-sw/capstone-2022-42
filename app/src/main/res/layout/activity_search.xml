@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SearchActivity">
+    tools:context=".activity.SearchActivity2">
 
     <fragment
         android:id="@+id/map"
@@ -18,10 +18,9 @@
 
     <TextView
         android:id="@+id/mountain_name"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/bold"
         android:padding="10dp"
