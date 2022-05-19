@@ -159,18 +159,21 @@ public class FragSignIn3 extends Fragment {
 
     // user data 추가
     private void writeNewUser(String uid, FirebaseUser user){
-        List<Integer> trailComplited = new ArrayList<>(Arrays.asList(1, 3)); // 나중에 초기화값 []로 수정
+        List<Integer> trailComplited = new ArrayList<>(Arrays.asList(1, 3, 2)); // 나중에 초기화값 []로 수정
         List<Integer> trailPlan = new ArrayList<>(Arrays.asList(4)); // 나중에 초기화값 []로 수정
+
+        List<String> trailComplitedDate = new ArrayList<>(Arrays.asList("2022-05-11", "2022-05-12", "2022-05-19")); // 나중에 초기화값 []로 수정
 
         List<Integer> missionDaily = new ArrayList<>();
         List<Integer> missionWeekly = new ArrayList<>();
         List<Integer> missionMonthly = new ArrayList<>();
 
         // 사용자 rank 정보 초기화 어떻게 할지 적용 필요
-        User member = new User(user.getDisplayName(), 0, 0,
+        User member = new User(user.getDisplayName(), 0, 0, 10000,
                 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                trailComplited, trailPlan,
-                missionDaily, missionWeekly, missionMonthly);
+                trailComplited, trailPlan, trailComplitedDate,
+                missionDaily, missionWeekly, missionMonthly,
+                0, 0, 0, "", 0);
 
         database = FirebaseDatabase.getInstance().getReference();
 

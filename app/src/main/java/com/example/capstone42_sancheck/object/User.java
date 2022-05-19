@@ -7,6 +7,8 @@ public class User {
     public int rank;
     public int score;
 
+    public int goal;
+
     public int walkDaily;
     public int walkMon;
     public int walkTue;
@@ -22,27 +24,36 @@ public class User {
     public List<Integer> trailComplited;
     public List<Integer> trailPlan;
 
+    public List<String> trailComplitedDate;
+
     // 미션 파트
     // value: 달성한 미션의 index
     public List<Integer> missionDaily;
     public List<Integer> missionWeekly;
     public List<Integer> missionMonthly;
 
-    // 출석 체크
-//    public List<Integer> dateCheck;
+    public int missionDailyCount;
+    public int missionWeeklyCount;
+
+    public int dailyCheck;
+    public String weeklyCheck;
+    public int monthlyCheck;
 
     public User() {
 
     }
 
-    public User(String name, int rank, int score,
+    public User(String name, int rank, int score, int goal,
                 int walkDaily, int walkMon, int walkTue, int walkWen, int walkThu, int walkFri, int walkSat, int walkSun, long walkTotal,
-                List<Integer> trailComplited, List<Integer> trailPlan,
-                List<Integer> missionDaily, List<Integer> missionWeekly, List<Integer> missionMonthly) {
+                List<Integer> trailComplited, List<Integer> trailPlan, List<String> trailComplitedDate,
+                List<Integer> missionDaily, List<Integer> missionWeekly, List<Integer> missionMonthly,
+                int missionDailyCount, int missionWeeklyCount, int dailyCheck, String weeklyCheck, int monthlyCheck) {
 
         this.name = name;
         this.rank = rank;
         this.score = score;
+
+        this.goal = goal;
 
         this.walkDaily = walkDaily;
         this.walkMon = walkMon;
@@ -57,9 +68,18 @@ public class User {
         this.trailComplited = trailComplited;
         this.trailPlan = trailPlan;
 
+        this.trailComplitedDate = trailComplitedDate;
+
         this.missionDaily = missionDaily;
         this.missionWeekly = missionWeekly;
         this.missionMonthly = missionMonthly;
+
+        this.missionDailyCount = missionDailyCount;
+        this.missionWeeklyCount = missionWeeklyCount;
+
+        this.dailyCheck = dailyCheck;
+        this.weeklyCheck = weeklyCheck;
+        this.monthlyCheck = monthlyCheck;
     }
 
     public String getName() { return name; }
@@ -76,6 +96,14 @@ public class User {
 
     public void setScore(int score){
         this.score = score;
+    }
+
+    public int getGoal(){
+        return goal;
+    }
+
+    public void setGoal(int goal) {
+        this.goal = goal;
     }
 
     public int getWalkDaily(){
@@ -168,6 +196,15 @@ public class User {
         this.trailPlan = trailPlan;
     }
 
+    public List<String> getTrailComplitedDate(){
+        return trailComplitedDate;
+    }
+
+    public void setTrailComplitedDate(String date, List<String> trailComplitedDate){
+        trailComplitedDate.add(date);
+        this.trailComplitedDate = trailComplitedDate;
+    }
+
     public void setTrailPlanDel(int idx, List<Integer> trailPlan){
         trailPlan.remove(Integer.valueOf(idx));
         this.trailPlan = trailPlan;
@@ -195,5 +232,45 @@ public class User {
 
     public void setMissionMonthly(List<Integer> missionMonthly){
         this.missionMonthly = missionMonthly;
+    }
+
+    public int getMissionDailyCount(){
+        return missionDailyCount;
+    }
+
+    public void setMissionDailyCount(int missionDailyCount){
+        this.missionDailyCount = missionDailyCount;
+    }
+
+    public int getMissionWeeklyCount(){
+        return missionWeeklyCount;
+    }
+
+    public void setMissionWeeklyCount(int missionWeeklyCount){
+        this.missionWeeklyCount = missionWeeklyCount;
+    }
+
+    public int getDailyCheck(){
+        return dailyCheck;
+    }
+
+    public void setDailyCheck(int dailyCheck){
+        this.dailyCheck = dailyCheck;
+    }
+
+    public String getWeeklyCheck(){
+        return weeklyCheck;
+    }
+
+    public void setWeeklyCheck(String weeklyCheck){
+        this.weeklyCheck = weeklyCheck;
+    }
+
+    public int getMonthlyCheck(){
+        return monthlyCheck;
+    }
+
+    public void setMonthlyCheck(int monthlyCheck){
+        this.monthlyCheck = monthlyCheck;
     }
 }

@@ -437,7 +437,7 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/marubold"
                             android:gravity="center_vertical"
-                            android:text="묵표지수"
+                            android:text="목표지수"
                             android:textSize="16dp"
                             />
 
