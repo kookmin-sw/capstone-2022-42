@@ -26,6 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter {
     private ArrayList<Mountain> arrayList = new ArrayList<>();
@@ -95,11 +97,18 @@ public class ListViewAdapter extends BaseAdapter {
                 databaseReference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.getValue(User.class) != null){
-                            Toast.makeText(context, "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
-                            User user = snapshot.getValue(User.class);
-                            user.setTrailPlanAdd(searchListViewItem.getIndex(), user.trailPlan);
-                            databaseReference.child(uid).setValue(user);
+                        if (snapshot.getValue(User.class) != null) {
+                            if (snapshot.child("trailPlan").exists()) {
+                                Toast.makeText(context, "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
+                                User user = snapshot.getValue(User.class);
+                                user.setTrailPlanAdd(searchListViewItem.getIndex(), user.trailPlan);
+                                databaseReference.child(uid).setValue(user);
+                            }
+                            else {
+                                List<Integer> trailPlan = new ArrayList<>(Arrays.asList(searchListViewItem.getIndex()));
+                                databaseReference.child(uid).child("trailPlan").setValue(trailPlan);
+                                Toast.makeText(context, "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
 
