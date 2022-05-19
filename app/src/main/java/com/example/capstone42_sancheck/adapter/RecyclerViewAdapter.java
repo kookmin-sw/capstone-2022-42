@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -57,6 +58,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                             if (snapshot.getValue(User.class) != null){
                                 User user = snapshot.getValue(User.class);
                                 user.setTrailPlanDelete(getPosition(), user.trailPlan);
+                                Toast.makeText(itemView.getContext(), "찜 목록에서 삭제되었습니다.", Toast.LENGTH_SHORT).show();
                                 databaseReference.child(uid).setValue(user);
                             }
                         }
