@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.example.capstone42_sancheck.R;
 
 import java.util.ArrayList;
@@ -137,9 +140,11 @@ public class QuestionActivity extends AppCompatActivity {
                 recommendArray.add(time);
                 recommendArray.add(distance);
                 Log.d("유저가 고른 추천리스트", String.valueOf(recommendArray));
-
                 startActivity(intent);
             }
         });
+
+
+
     }
 }

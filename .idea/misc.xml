@@ -59,6 +59,23 @@
         <entry key="..\:/Users/Public/AndroidStudioProjects/git2/capstone-2022-42/app/src/main/res/layout/frag_rank.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/git2/capstone-2022-42/app/src/main/res/layout/frag_rank2.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/git2/capstone-2022-42/app/src/main/res/layout/frag_search_listview_item.xml" value="0.24947916666666667" />
+        <entry key="app/src/main/res/drawable/ic_baseline_notifications_none_24.xml" value="0.128" />
+        <entry key="app/src/main/res/layout/activity_alram.xml" value="0.2234375" />
+        <entry key="app/src/main/res/layout/activity_cart.xml" value="0.4326530612244898" />
+        <entry key="app/src/main/res/layout/activity_cart_recycleriew_item.xml" value="0.13768115942028986" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_question.xml" value="0.2234375" />
+        <entry key="app/src/main/res/layout/activity_recommendation.xml" value="0.17028985507246377" />
+        <entry key="app/src/main/res/layout/activity_search.xml" value="0.2234375" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.2234375" />
+        <entry key="app/src/main/res/layout/content_scrolling.xml" value="0.17028985507246377" />
+        <entry key="app/src/main/res/layout/frag_board.xml" value="0.2234375" />
+        <entry key="app/src/main/res/layout/frag_home.xml" value="0.3324022380052004" />
+        <entry key="app/src/main/res/layout/frag_rank.xml" value="0.10866261398176291" />
+        <entry key="app/src/main/res/layout/frag_rank2.xml" value="0.10866261398176291" />
+        <entry key="app/src/main/res/layout/frag_search.xml" value="0.10866261398176291" />
+        <entry key="app/src/main/res/layout/frag_search_listview_item.xml" value="0.13768115942028986" />
+        <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.17028985507246377" />
       </map>
     </option>
   </component>
