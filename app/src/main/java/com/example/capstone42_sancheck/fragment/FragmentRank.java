@@ -44,7 +44,7 @@ public class FragmentRank extends Fragment {
         View view = inflater.inflate(R.layout.frag_rank, container, false);
 
         database = FirebaseDatabase.getInstance();//파이어베이스연동
-        databaseReference = database.getReference("User");
+        databaseReference = database.getReference("Users");
         Context context =view.getContext();
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
