@@ -19,6 +19,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.capstone42_sancheck.R;
+import com.example.capstone42_sancheck.object.Mountain;
 import com.example.capstone42_sancheck.object.User;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -30,6 +31,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -54,8 +57,10 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class SearchActivity extends AppCompatActivity implements
@@ -66,12 +71,12 @@ public class SearchActivity extends AppCompatActivity implements
 
     GoogleMap mMap;
     TextView title, sub_title, lt;
-    ImageView mountain_heart;
+    ImageView mountain_heart, mountain_search;
     ArrayList<com.google.android.gms.maps.model.LatLng> mapList;
 
     private FirebaseAuth auth;
-    private FirebaseDatabase database;
-    private DatabaseReference databaseReference;
+    private FirebaseDatabase database, mountainDB;
+    private DatabaseReference databaseReference, mountaindatabaseReference;
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private boolean permissionDenied = false;
@@ -108,6 +113,7 @@ public class SearchActivity extends AppCompatActivity implements
         sub_title = (TextView) findViewById(R.id.pm_name);
         lt = (TextView) findViewById(R.id.lt);
         mountain_heart = (ImageView) findViewById(R.id.search_mountain_heart);
+        mountain_search = (ImageView) findViewById(R.id.search_check);
 
         title.setText(m_name);
         sub_title.setText(pm_name);
@@ -125,6 +131,7 @@ public class SearchActivity extends AppCompatActivity implements
 
         database = FirebaseDatabase.getInstance("https://capstone42-sancheck-96817-default-rtdb.firebaseio.com/");
         databaseReference = database.getReference("Users");
+        mountainDB = FirebaseDatabase.getInstance("https://capstone42-sancheck-96817.firebaseio.com/");
 
         mountain_heart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,6 +141,7 @@ public class SearchActivity extends AppCompatActivity implements
                 databaseReference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Mountain mountainInfo = new Mountain();
                         if (snapshot.getValue(User.class) != null) {
                             if (snapshot.child("trailPlan").exists()) {
                                 Toast.makeText(view.getContext(), "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
@@ -146,6 +154,63 @@ public class SearchActivity extends AppCompatActivity implements
                                 Toast.makeText(view.getContext(), "찜 목록에 추가되었습니다.", Toast.LENGTH_SHORT).show();
                             }
                         }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+
+        mountain_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                auth = FirebaseAuth.getInstance();
+                String uid = auth.getCurrentUser().getUid();
+                databaseReference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.getValue(User.class) != null) {
+                            long now = System.currentTimeMillis();
+                            Date date = new Date(now);
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                            String getTime = sdf.format(date);
+
+                            // 등산로 인덱스 추가
+                            if (snapshot.child("trailComplited").exists()) {
+                                Toast.makeText(view.getContext(), "등산로를 완주하였습니다!", Toast.LENGTH_SHORT).show();
+                                User user = snapshot.getValue(User.class);
+                                user.setTrailComplitedAdd(index, user.trailComplited);
+                                databaseReference.child(uid).setValue(user);
+                            } else {
+                                List<Integer> trailComplited = new ArrayList<>(Arrays.asList(index));
+                                databaseReference.child(uid).child("trailComplited").setValue(trailComplited);
+                                Toast.makeText(view.getContext(), "등산로를 완주하였습니다!", Toast.LENGTH_SHORT).show();
+                            }
+                            // 등산로 완주 날짜 추가
+                            if (snapshot.child("trailComplitedDate").exists()) {
+                                User user = snapshot.getValue(User.class);
+                                user.setTrailComplitedDate(getTime, user.trailComplitedDate);
+                                databaseReference.child(uid).setValue(user);
+                            } else {
+                                List<String> trailComplitedDate = new ArrayList<>(Arrays.asList(getTime));
+                                databaseReference.child(uid).child("trailComplitedDate").setValue(trailComplitedDate);
+                            }
+                        }
+                        mountaindatabaseReference = mountainDB.getReference(String.valueOf(index - 1));
+                        mountaindatabaseReference.child("PEOPLE").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                if (!task.isSuccessful()) {
+                                    Log.e("SearchActivity", "Error getting data", task.getException());
+                                }
+                                else {
+                                    mountaindatabaseReference.child("PEOPLE").setValue(task.getResult().getValue(Integer.class) + 1);
+                                }
+                            }
+                        });
                     }
 
                     @Override

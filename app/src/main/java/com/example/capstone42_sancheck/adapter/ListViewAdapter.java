@@ -84,7 +84,7 @@ public class ListViewAdapter extends BaseAdapter {
         PMNTN_LT.setText(searchListViewItem.getPMNTN_LT().toString() + "km");
         PMNTN_TIME.setText(searchListViewItem.getTime() + "분");
         PMNTN_DFFL.setText(searchListViewItem.getPMNTN_DFFL());
-        PEOPLE.setText(searchListViewItem.getPEOPLE() + "명 등산중!");
+        PEOPLE.setText(searchListViewItem.getPEOPLE() + "명 완주!");
 
         database = FirebaseDatabase.getInstance("https://capstone42-sancheck-96817-default-rtdb.firebaseio.com/");
         databaseReference = database.getReference("Users");
@@ -124,7 +124,7 @@ public class ListViewAdapter extends BaseAdapter {
     }
 
     public void addItem(int index, String MNTN_NM, String PMNTN_NM, Double PMNTN_LT, Double PMNTN_UPPL,
-                        Double PMNTN_GODN, String PMNTN_DFFL, String START_PNT, String END_PNT) {
+                        Double PMNTN_GODN, String PMNTN_DFFL, String START_PNT, String END_PNT, int PEOPLE) {
 
         Mountain searchListViewItem = new Mountain();
         searchListViewItem.setIndex(index);
@@ -136,6 +136,7 @@ public class ListViewAdapter extends BaseAdapter {
         searchListViewItem.setPMNTN_DFFL(PMNTN_DFFL);
         searchListViewItem.setSTART_PNT(START_PNT);
         searchListViewItem.setEND_PNT(END_PNT);
+        searchListViewItem.setPEOPLE(PEOPLE);
 
         arrayList.add(searchListViewItem);
     }

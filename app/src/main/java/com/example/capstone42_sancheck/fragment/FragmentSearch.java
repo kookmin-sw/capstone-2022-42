@@ -120,6 +120,7 @@ public class FragmentSearch extends Fragment {
                             mountain.setPMNTN_DFFL(dataSnapshot.child("PMNTN_DFFL").getValue(String.class));
                             mountain.setSTART_PNT(dataSnapshot.child("START_PNT").getValue(String.class));
                             mountain.setEND_PNT(dataSnapshot.child("END_PNT").getValue(String.class));
+                            mountain.setPEOPLE(dataSnapshot.child("PEOPLE").getValue(Integer.class));
 
                             if (dataSnapshot.child("MNTN_NM").getValue(String.class).contains(keyword)) {
                                 mountainList.add(mountain);
@@ -127,7 +128,7 @@ public class FragmentSearch extends Fragment {
                                         dataSnapshot.child("PMNTN_NM").getValue(String.class), dataSnapshot.child("PMNTN_LT").getValue(Double.class),
                                         dataSnapshot.child("PMNTN_UPPL").getValue(Double.class), dataSnapshot.child("PMNTN_GODN").getValue(Double.class),
                                         dataSnapshot.child("PMNTN_DFFL").getValue(String.class), dataSnapshot.child("START_PNT").getValue(String.class),
-                                        dataSnapshot.child("END_PNT").getValue(String.class));
+                                        dataSnapshot.child("END_PNT").getValue(String.class), dataSnapshot.child("PEOPLE").getValue(Integer.class));
 //                                lv1.setAdapter(adapter);
                             }
                         }
@@ -147,7 +148,7 @@ public class FragmentSearch extends Fragment {
                         for (Mountain m : mountainList) {
                             adapter.addItem(m.getIndex(), m.getMNTN_NM(), m.getPMNTN_NM(),
                                     m.getPMNTN_LT(), m.getPMNTN_UPPL(), m.getPMNTN_GODN(), m.getPMNTN_DFFL(),
-                                    m.getSTART_PNT(), m.getEND_PNT());
+                                    m.getSTART_PNT(), m.getEND_PNT(), m.getPEOPLE());
                             lv1.setAdapter(adapter);
                         }
                     }

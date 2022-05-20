@@ -186,8 +186,21 @@ public class User {
         return trailComplited;
     }
 
-    public void setTrailComplited(int idx, List<Integer> trailComplited){
+    public void setTrailComplitedAdd(int idx, List<Integer> trailComplited){
+        // 중복 제거
         trailComplited.add(idx);
+        List<Integer> list = new ArrayList<>();
+        Set<Integer> uniqueValues = new HashSet<>();
+        for (Integer integer : trailComplited) {
+            if (uniqueValues.add(integer)) {
+                list.add(integer);
+            }
+        }
+        this.trailComplited = list;
+    }
+
+    public void setTrailComplitedDelete(int idx, List<Integer> trailComplited) {
+        trailComplited.remove(idx);
         this.trailComplited = trailComplited;
     }
 
