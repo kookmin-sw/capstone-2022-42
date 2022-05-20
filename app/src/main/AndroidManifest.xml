@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone42_Sancheck">
         <activity
+            android:name=".activity.Recommendation"
+            android:exported="false"
+            android:label="@string/title_activity_recommendation"
+            android:theme="@style/Theme.Capstone42_Sancheck.NoActionBar" />
+        <!-- android:name="com.chaquo.python.android.PyApplication" -->
+        <activity
             android:name=".activity.QuestionActivity"
             android:exported="false" />
         <activity
@@ -27,9 +33,7 @@
             android:exported="false" /> <!-- 구글 맵 관련 meta-data -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDOazzDcxjMnH9jod9CXqbhn5S_XwztK4I" />
-
-        <!-- 네이버 맵 관련 meta-data -->
+            android:value="AIzaSyDOazzDcxjMnH9jod9CXqbhn5S_XwztK4I" /> <!-- 네이버 맵 관련 meta-data -->
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="wzcufpwjcc" />

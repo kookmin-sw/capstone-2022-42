@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentSearch fs;
     private ImageView iv_heart;
     private ImageView iv_alram;
+    private ImageView iv_recommendation;
 
 
     @Override
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         iv_alram = (ImageView) findViewById(R.id.iv_alram);
         iv_heart = (ImageView) findViewById(R.id.iv_heart);
+        iv_recommendation = (ImageView) findViewById(R.id.iv_recommendation);
 
         iv_alram.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +88,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        iv_recommendation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Recommendation.class);
+                startActivity(intent);
+            }
+        });
     }
+//
+//    public void openRecommendation(){
+//        Intent intent = new Intent(this, Recommendation.class);
+//        startActivity(intent);
+//    }
 
     // 프래그먼트 교체
     private void setFrag(int n){

@@ -14,6 +14,14 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
+            android:id="@+id/iv_recommendation"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_baseline_recommedation"
+            />
+
+        <ImageView
             android:id="@+id/iv_heart"
             android:layout_width="40dp"
             android:layout_height="40dp"
