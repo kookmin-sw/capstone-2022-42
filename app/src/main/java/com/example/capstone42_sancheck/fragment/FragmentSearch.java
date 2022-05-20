@@ -31,6 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.Collator;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -47,10 +48,35 @@ public class FragmentSearch extends Fragment {
     private Spinner spinner;
 
     private final static Comparator<Mountain> timeComparator = new Comparator<Mountain>() {
-        private final Collator timeCollator = Collator.getInstance();
-        @Override
         public int compare(Mountain o, Mountain t1) {
-            return timeCollator.compare(o.getTime(), t1.getTime());
+            return Integer.compare(o.getTime(), t1.getTime());
+        }
+    };
+
+    private final static Comparator<Mountain> distanceComparator = new Comparator<Mountain>() {
+        public int compare(Mountain o, Mountain t1) {
+            return Double.compare(o.getPMNTN_LT(), t1.getPMNTN_LT());
+        }
+    };
+
+    private final static Comparator<Mountain> diffComparator = new Comparator<Mountain>() {
+        public int compare(Mountain o, Mountain t1) {
+            int oDiff = 0, t1Diff = 0;
+            if (o.getPMNTN_DFFL().equals("쉬움")) oDiff = 1;
+            else if (o.getPMNTN_DFFL().equals("중간")) oDiff = 2;
+            else if (o.getPMNTN_DFFL().equals("어려움")) oDiff = 3;
+
+            if (t1.getPMNTN_DFFL().equals("쉬움")) t1Diff = 1;
+            else if (t1.getPMNTN_DFFL().equals("중간")) t1Diff = 2;
+            else if (t1.getPMNTN_DFFL().equals("어려움")) t1Diff = 3;
+            
+            return Integer.compare(oDiff, t1Diff);
+        }
+    };
+
+    private final static Comparator<Mountain> pnameComparator = new Comparator<Mountain>() {
+        public int compare(Mountain o, Mountain t1) {
+            return Collator.getInstance().compare(o.getPMNTN_NM(), t1.getPMNTN_NM());
         }
     };
 
@@ -92,6 +118,8 @@ public class FragmentSearch extends Fragment {
                             mountain.setPMNTN_UPPL(dataSnapshot.child("PMNTN_UPPL").getValue(Double.class));
                             mountain.setPMNTN_GODN(dataSnapshot.child("PMNTN_GODN").getValue(Double.class));
                             mountain.setPMNTN_DFFL(dataSnapshot.child("PMNTN_DFFL").getValue(String.class));
+                            mountain.setSTART_PNT(dataSnapshot.child("START_PNT").getValue(String.class));
+                            mountain.setEND_PNT(dataSnapshot.child("END_PNT").getValue(String.class));
 
                             if (dataSnapshot.child("MNTN_NM").getValue(String.class).contains(keyword)) {
                                 mountainList.add(mountain);
@@ -100,18 +128,28 @@ public class FragmentSearch extends Fragment {
                                         dataSnapshot.child("PMNTN_UPPL").getValue(Double.class), dataSnapshot.child("PMNTN_GODN").getValue(Double.class),
                                         dataSnapshot.child("PMNTN_DFFL").getValue(String.class), dataSnapshot.child("START_PNT").getValue(String.class),
                                         dataSnapshot.child("END_PNT").getValue(String.class));
-                                lv1.setAdapter(adapter);
+//                                lv1.setAdapter(adapter);
                             }
                         }
-//                        if (filter.equals("소요시간순"))
-//                            Collections.sort(mountainList, timeComparator);
-//
-//                        for (Mountain m : mountainList) {
-//                            adapter.addItem(m.getIndex(), m.getMNTN_NM(), m.getPMNTN_NM(),
-//                                    m.getPMNTN_LT(), m.getPMNTN_UPPL(), m.getPMNTN_GODN(), m.getPMNTN_DFFL(),
-//                                    m.getSTART_PNT(), m.getEND_PNT());
-//                            lv1.setAdapter(adapter);
-//                        }
+                        adapter.clear();
+                        if (filter.equals("소요시간순"))
+                            Collections.sort(mountainList, timeComparator);
+
+                        else if (filter.equals("길이순"))
+                            Collections.sort(mountainList, distanceComparator);
+
+                        else if (filter.equals("난이도순"))
+                            Collections.sort(mountainList, diffComparator);
+
+                        else if (filter.equals("구간이름순"))
+                            Collections.sort(mountainList, pnameComparator);
+
+                        for (Mountain m : mountainList) {
+                            adapter.addItem(m.getIndex(), m.getMNTN_NM(), m.getPMNTN_NM(),
+                                    m.getPMNTN_LT(), m.getPMNTN_UPPL(), m.getPMNTN_GODN(), m.getPMNTN_DFFL(),
+                                    m.getSTART_PNT(), m.getEND_PNT());
+                            lv1.setAdapter(adapter);
+                        }
                     }
 
                     @Override
@@ -171,6 +209,7 @@ public class FragmentSearch extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Mountain item = (Mountain) adapter.getItem(i);
                 Intent intent = new Intent(getContext(), SearchActivity.class);
+                intent.putExtra("index", item.getIndex());
                 intent.putExtra("m_name", item.getMNTN_NM());
                 intent.putExtra("pm_name", item.getPMNTN_NM());
                 intent.putExtra("lt", item.getPMNTN_LT());
