@@ -15,7 +15,9 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Capstone42_Sancheck">
+        android:theme="@style/Theme.Capstone42_Sancheck"
+        >
+
         <activity
             android:name=".activity.Recommendation"
             android:exported="false"

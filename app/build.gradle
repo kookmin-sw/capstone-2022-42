@@ -27,6 +27,7 @@ android {
             buildPython "C:/path/to/python.exe"
             buildPython "/usr/local/bin/python3"
             buildPython "python3"
+            buildPython "python"
             pip{
                 install "pandas"
                 install "scikit-learn"
@@ -38,7 +39,6 @@ android {
                 python.srcDir "src/main/python"
             }
         }
-
     }
 
     buildTypes {
@@ -57,6 +57,13 @@ android {
     useLibrary 'org.apache.http.legacy'
     buildFeatures {
         viewBinding true
+    }
+}
+
+configurations {
+    all {
+        exclude group: 'commons-logging', module: 'commons-logging'
+        exclude group: 'org.apache.httpcomponents', module: 'httpmime'
     }
 }
 
@@ -94,12 +101,6 @@ dependencies {
     implementation 'com.google.maps:google-maps-services:0.1.3'
     implementation 'com.github.pedroSG94:AutoPermissions:1.0.3'
 
-    /** 네이버 맵 관련 gradle **/
-    implementation 'com.naver.maps:map-sdk:3.15.0'
-    implementation('com.naver.maps:map-sdk:3.15.0') {
-        exclude group: 'com.android.support'
-    }
-
     implementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
 
     /** Snackbar 관련 gradle **/
@@ -119,6 +120,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
 }
+
 task wrapper(type: Wrapper) {
     gradleVersion = '7.0'
 }
