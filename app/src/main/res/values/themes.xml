@@ -17,4 +17,11 @@
     <style name = "SplashTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <item name="android:windowBackground">@drawable/ic_loading</item>
     </style>
+    <style name="Theme.Capstone42_Sancheck.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Capstone42_Sancheck.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Capstone42_Sancheck.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
