@@ -25,9 +25,8 @@ android {
         }
         python{
             buildPython "C:/path/to/python.exe"
-            buildPython "/usr/local/bin/python3"
+            buildPython "/usr/bin/python3"
             buildPython "python3"
-            buildPython "python"
             pip{
                 install "pandas"
                 install "scikit-learn"
