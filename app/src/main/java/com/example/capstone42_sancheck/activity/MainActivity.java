@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.app.Activity;
+import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.example.capstone42_sancheck.R;
 import com.example.capstone42_sancheck.fragment.FragmentBoard;
@@ -32,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView iv_heart;
     private ImageView iv_alram;
     private ImageView iv_recommendation;
+//    private ProgressBar spinner;
+    private ProgressBar pgsBar;
 
 
     @Override
@@ -39,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.bottomNavi);
+        pgsBar = (ProgressBar) findViewById(R.id.pBar);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
             @Override
@@ -91,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         iv_recommendation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                pgsBar.setVisibility(view.VISIBLE);
                 Intent intent = new Intent(getApplicationContext(), Recommendation.class);
                 startActivity(intent);
             }

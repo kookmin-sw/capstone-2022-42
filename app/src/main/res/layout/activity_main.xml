@@ -13,12 +13,21 @@
         android:gravity="right"
         tools:ignore="MissingConstraints">
 
+        <ProgressBar
+            android:id="@+id/pBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"/>
+
         <ImageView
             android:id="@+id/iv_recommendation"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginRight="10dp"
-            android:src="@drawable/ic_baseline_recommedation"
+            android:src="@drawable/ic_recommeee_1"
+            app:tint="@color/black"
             />
 
         <ImageView
@@ -37,6 +46,7 @@
             android:src="@drawable/ic_baseline_notifications_none_24"
             app:tint="@color/black" />
     </LinearLayout>
+
 
     <FrameLayout
         android:id="@+id/main_frame"

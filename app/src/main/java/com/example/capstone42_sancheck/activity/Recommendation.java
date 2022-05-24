@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -26,6 +27,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.location.LocationListener;
+import android.widget.Button;
+import android.widget.ProgressBar;
+
 
 
 import com.chaquo.python.PyObject;
@@ -43,8 +47,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import androidx.core.content.ContextCompat;
-
-
 
 public class Recommendation extends AppCompatActivity  {
     TextView textView;
@@ -69,30 +71,28 @@ public class Recommendation extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // ProgressDialog 생성
+        ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        dialog.setMessage("processing...");
+        dialog.show();
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_recommendation);
         client = LocationServices.getFusedLocationProviderClient(this);
+//        spinner = (ProgressBar)findViewById(R.id.progressBar);
 
         textView = (TextView) findViewById(R.id.textViewRecomm);
 
         if (! Python.isStarted()){
             Python.start(new AndroidPlatform(this));
         }
-//        ArrayList recommendArray = new ArrayList<>();
-//        ArrayList sayongja = new ArrayList<>();
-//        ArrayList usercod = new ArrayList<>();
-//        sayongja.add(0,0.02);
-//        sayongja.add(1,2);
-//        sayongja.add(2,3);
-//        usercod.add(0,126.9);
-//        usercod.add(1,37.5);
-//        int [] sayongja = {};
-//        int [] usercod = {};
-
 
         Python py = Python.getInstance();
         //create python object
         PyObject pyobj = py.getModule("myscript"); //give python script name
+
         //call this function
         if (longitude1 == 0 || latitude1 == 0){
             longitude1 = 37.5232323232323;
@@ -115,11 +115,9 @@ public class Recommendation extends AppCompatActivity  {
             textView.append("-");
             textView.append(cityArr[2*i+1]);
             textView.append("\n");
-
         }
-//
-//
-//
+        // ProgressDialog 없애기
+//        dialog.dismiss();
 //        System.out.println(cityArr);
 //
 //        textView.setText(recommendArray);
