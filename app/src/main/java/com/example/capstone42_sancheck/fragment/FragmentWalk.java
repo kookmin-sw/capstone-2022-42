@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ProgressBar;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -39,6 +41,7 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
     private SensorManager sm;
     private Sensor stepCounterSensor;
     private TextView btn_reset;
+    private ProgressBar progressBar;
 
     int steps = 0;
 
@@ -58,6 +61,7 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
 
         tv_sensor = (TextView) view.findViewById(R.id.sensor);
         btn_reset = (TextView) view.findViewById(R.id.btn_reset);
+        progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         sm = (SensorManager)getActivity().getSystemService(Context.SENSOR_SERVICE);
         stepCounterSensor = sm.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
 
@@ -80,6 +84,8 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
                         steps = post.getWalkDaily();
                     }
                     tv_sensor.setText(String.valueOf(steps));
+                    progressBar.setProgress(80); //user input steps
+                    progressBar.setMax(1000); //user daily max stepcount
 
                     btn_reset.setOnClickListener(new View.OnClickListener() {
                         @Override

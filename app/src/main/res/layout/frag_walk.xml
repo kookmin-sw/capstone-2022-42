@@ -16,37 +16,58 @@
         android:textSize="40dp">
     </TextView>
 
-
     <TextView
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="80dp"
         android:fontFamily="@font/bold"
         android:text="Today" />
-    <TextView
-        android:id="@+id/sensor"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="@font/marulight"
-        android:textSize="100dp"
-        android:textColor="#eeafaf"
-        android:text="0"/>
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="20dp"
-        android:fontFamily="@font/bold"
-        android:text="STEPS" />
-    />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:gravity="center_horizontal"
+        >
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/circular_shape"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/sensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/marulight"
+            android:textSize="100dp"
+            android:textColor="#eeafaf"
+            android:text="0"/>
+        <TextView
+            android:layout_marginTop="220dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:fontFamily="@font/bold"
+            android:text="STEPS" />
+
+    </RelativeLayout>
+<!--    android:layout_marginTop="40dp"-->
     <TextView
         android:id="@+id/btn_reset"
-        android:layout_marginTop="40dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/light"
