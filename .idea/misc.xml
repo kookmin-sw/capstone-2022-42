@@ -32,9 +32,8 @@
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.104" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/drawable/listviewitem_roundcorner.xml" value="0.167" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_alram.xml" value="0.2078125" />
-        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_cart.xml" value="0.2" />
-        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_cart_recycleriew_item.xml" value="0.18" />
-        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_cart_recycleriew_item1.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_cart.xml" value="0.2078125" />
+        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_cart_recycleriew_item.xml" value="0.2078125" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_main.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_search.xml" value="0.1" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/activity_search1.xml" value="0.1" />
@@ -45,7 +44,7 @@
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_rank2.xml" value="0.2644927536231884" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_search.xml" value="0.25" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_search1.xml" value="0.11594202898550725" />
-        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_search_listview_item.xml" value="0.18" />
+        <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_search_listview_item.xml" value="0.1" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_sign_in1.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_sign_in3.xml" value="0.2644927536231884" />
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/layout/frag_walk.xml" value="0.2644927536231884" />
@@ -53,6 +52,7 @@
         <entry key="..\:/Users/LeeJungHun/Desktop/capstone-2022-42/app/src/main/res/menu/bottom_menu.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/git/capstone-2022-42/app/src/main/res/layout/frag_board.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/git/capstone-2022-42/app/src/main/res/layout/frag_home.xml" value="0.1" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/git/capstone-2022-42/app/src/main/res/layout/frag_home_listview_item.xml" value="0.17980072463768115" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/git/capstone-2022-42/app/src/main/res/layout/frag_rank.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/git/capstone-2022-42/app/src/main/res/layout/frag_walk.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/git2/capstone-2022-42/app/src/main/res/layout/activity_cart.xml" value="0.20380434782608695" />
@@ -60,7 +60,6 @@
         <entry key="..\:/Users/Public/AndroidStudioProjects/git2/capstone-2022-42/app/src/main/res/layout/frag_rank.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/git2/capstone-2022-42/app/src/main/res/layout/frag_rank2.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/git2/capstone-2022-42/app/src/main/res/layout/frag_search_listview_item.xml" value="0.24947916666666667" />
-<<<<<<< Updated upstream
         <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/layout/fragment_mission1.xml" value="0.16354166666666667" />
         <entry key="app/src/main/res/drawable/circular_progress_bar.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/circular_shape.xml" value="0.1" />
@@ -73,8 +72,6 @@
         <entry key="app/src/main/res/layout/frag_home.xml" value="0.29094238281249996" />
         <entry key="app/src/main/res/layout/frag_home_listview_item.xml" value="0.2921875" />
         <entry key="app/src/main/res/layout/frag_walk.xml" value="0.19479166666666667" />
-=======
->>>>>>> Stashed changes
       </map>
     </option>
   </component>

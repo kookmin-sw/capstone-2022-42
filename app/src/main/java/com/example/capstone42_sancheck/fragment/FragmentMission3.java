@@ -115,7 +115,8 @@ public class FragmentMission3 extends Fragment {
                 if(mission.get(9)==0){
                     mission.set(9,4853);//북한산_백운대
                     mission.set(10,27101);// 응봉산
-                    Midx =monthlyM(me.getTrailComplited());
+                    if(me.getTrailComplited()!=null)  Midx =monthlyM(me.getTrailComplited());
+                    else Midx =  (int) (Math.random() * 1000);
                     mission.set(11,Midx);//랜덤
                     me.setMissionMonthly(mission);
                     database.child("Users").child(uid).setValue(me);
@@ -222,20 +223,20 @@ public class FragmentMission3 extends Fragment {
                     });
                 }
                 //월간 미션  6. 등산하기
-                if(mission.get(6)==0 && (me.getTrailComplited()).contains(mission.get(9))){
-                    btn6.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            score = score+200;
-                            database.child("Users").child(uid).child("score").setValue(score);
-                            database.child("Users").child(uid).child("missionMonthly").child("6").setValue(1);
-                            btn6.setEnabled(false);
-                            flag++;
-                            database.child("Users").child(uid).child("missionMonthly").child("13").setValue(flag);
-                        }
-                    });
-                }
-
+                if(me.getTrailComplited()!=null) {
+                    if (mission.get(6) == 0 && (me.getTrailComplited()).contains(mission.get(9))) {
+                        btn6.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                score = score + 200;
+                                database.child("Users").child(uid).child("score").setValue(score);
+                                database.child("Users").child(uid).child("missionMonthly").child("6").setValue(1);
+                                btn6.setEnabled(false);
+                                flag++;
+                                database.child("Users").child(uid).child("missionMonthly").child("13").setValue(flag);
+                            }
+                        });
+                    }
                 //월간 미션  7.  등산하기
                 if(mission.get(7)==0 && (me.getTrailComplited()).contains(mission.get(10))){
                     btn7.setOnClickListener(new View.OnClickListener() {
@@ -264,6 +265,8 @@ public class FragmentMission3 extends Fragment {
                         }
                     });
                 }
+                }
+
             }
 
             @Override

@@ -41,6 +41,7 @@ public class FragmentMission1 extends Fragment {
     int temp;
     int score;
     int montlyC;
+
     //현재시간
     String day = new SimpleDateFormat("yyyyMMdd(E)").format(new Date());
     int today =  Integer.parseInt(day.substring(0,8));
@@ -75,32 +76,42 @@ public class FragmentMission1 extends Fragment {
         auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
         final String uid = user.getUid();
-        database = FirebaseDatabase.getInstance().getReference();
 
+        database = FirebaseDatabase.getInstance().getReference();
         database.child("Users").child(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User me = snapshot.getValue(User.class);
                 int dateCmp = me.getDailyCheck();
 
+                if(me.getMissionDaily()==null){
+                    mission= new ArrayList(Collections.nCopies(9, 0));
+                    me.setMissionDaily(mission);
+                    database.child("Users").child(uid).setValue(me);
+                }
 
+                if(me.getMissionMonthly()==null){
+                    mission= new ArrayList(Collections.nCopies(14, 0));
+                    me.setMissionMonthly(mission);
+                    database.child("Users").child(uid).setValue(me);
+                }
+
+                if(me.getMissionWeekly()==null){
+                    mission= new ArrayList(Collections.nCopies(8, 0));
+                    me.setMissionWeekly(mission);
+                    database.child("Users").child(uid).setValue(me);
+                }
+
+                montlyC = me.getMissionMonthly().get(12);
                 score = me.getScore();
                 walkToday = me.getWalkDaily();
                 mission = me.getMissionDaily();
                 temp = me.getMissionDailyCount();
-                montlyC = me.getMissionMonthly().get(12);
+
+
 
                 if(dateCmp!=today) {
-                    if(me.getMissionMonthly()==null){
-                        mission= new ArrayList(Collections.nCopies(14, 0));
-                        me.setMissionMonthly(mission);
-                        database.child("Users").child(uid).setValue(me);
-                    }
-                    if(me.getMissionWeekly()==null){
-                        mission= new ArrayList(Collections.nCopies(8, 0));
-                        me.setMissionWeekly(mission);
-                        database.child("Users").child(uid).setValue(me);
-                    }
+
                     if(dateCmp!=0&&(Integer.toString(dateCmp)).charAt(5)!=(Integer.toString(today)).charAt(5)){
                         database.child("Users").child(uid).child("missionMontly").child("8").setValue(-1);
 
