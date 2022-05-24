@@ -24,8 +24,10 @@ android {
             abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
         }
         python{
+            buildPython "C:\\Users\\abo33\\AppData\\Local\\Programs\\Python\\Python38\\python.exe"
             buildPython "/usr/bin/python3"
             buildPython "python3"
+            buildPython "python"
             pip{
                 install "pandas"
                 install "scikit-learn"
