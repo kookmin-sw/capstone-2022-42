@@ -84,7 +84,7 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
                         steps = post.getWalkDaily();
                     }
                     tv_sensor.setText(String.valueOf(steps));
-                    progressBar.setProgress(80); //user input steps
+                    progressBar.setProgress(steps); //user input steps
                     progressBar.setMax(1000); //user daily max stepcount
 
                     btn_reset.setOnClickListener(new View.OnClickListener() {

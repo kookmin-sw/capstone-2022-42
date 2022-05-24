@@ -67,11 +67,13 @@
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/ic_recommeee_1.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_recommendation.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_recommendation.xml" value="0.27741394042968753" />
+        <entry key="app/src/main/res/layout/activity_search.xml" value="0.315625" />
         <entry key="app/src/main/res/layout/frag_board.xml" value="0.14209726443768997" />
         <entry key="app/src/main/res/layout/frag_home.xml" value="0.29094238281249996" />
         <entry key="app/src/main/res/layout/frag_home_listview_item.xml" value="0.2921875" />
         <entry key="app/src/main/res/layout/frag_walk.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/recoommender_recycler.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>
