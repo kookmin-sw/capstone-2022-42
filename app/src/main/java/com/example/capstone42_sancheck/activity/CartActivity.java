@@ -48,13 +48,12 @@ public class CartActivity extends AppCompatActivity {
         databaseReference = database.getReference("Users");
         mountainDB = FirebaseDatabase.getInstance("https://capstone42-sancheck-96817.firebaseio.com/");
 
-        ArrayList<CartMountain> mountainArrayList = new ArrayList<>();
-        mountainArrayList.clear();
-        adapter.clear();
-
         databaseReference.child(uid).child("trailPlan").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<CartMountain> mountainArrayList = new ArrayList<>();
+                mountainArrayList.clear();
+                adapter.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     mountaindatabaseReference = mountainDB.getReference(String.valueOf(Integer.parseInt(dataSnapshot.getValue(Long.class).toString()) - 1));
                     mountaindatabaseReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
