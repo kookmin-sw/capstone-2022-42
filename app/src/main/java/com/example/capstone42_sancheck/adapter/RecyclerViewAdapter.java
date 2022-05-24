@@ -1,7 +1,5 @@
 package com.example.capstone42_sancheck.adapter;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,7 +79,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_cart_recycleriew_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_cart_listview_item, parent, false);
         return new MyViewHolder(v);
     }
 

@@ -1,6 +1,7 @@
 package com.example.capstone42_sancheck.activity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -99,6 +100,7 @@ public class SearchActivity extends AppCompatActivity implements
         mapFragment.getMapAsync(this);
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap googleMap) {
         Bundle bundle = getIntent().getExtras();

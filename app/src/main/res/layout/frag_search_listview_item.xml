@@ -108,6 +108,5 @@
                 android:fontFamily="@font/marulight"
                 android:textSize="15dp" />
         </RelativeLayout>
-
     </LinearLayout>
 </LinearLayout>

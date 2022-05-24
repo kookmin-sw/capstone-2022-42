@@ -47,12 +47,6 @@ public class FragmentSearch extends Fragment {
     private DatabaseReference databaseReference;
     private Spinner spinner;
 
-    private final static Comparator<Mountain> timeComparator = new Comparator<Mountain>() {
-        public int compare(Mountain o, Mountain t1) {
-            return Integer.compare(o.getTime(), t1.getTime());
-        }
-    };
-
     private final static Comparator<Mountain> distanceComparator = new Comparator<Mountain>() {
         public int compare(Mountain o, Mountain t1) {
             return Double.compare(o.getPMNTN_LT(), t1.getPMNTN_LT());
@@ -133,10 +127,7 @@ public class FragmentSearch extends Fragment {
                             }
                         }
                         adapter.clear();
-                        if (filter.equals("소요시간순"))
-                            Collections.sort(mountainList, timeComparator);
-
-                        else if (filter.equals("길이순"))
+                        if (filter.equals("길이순"))
                             Collections.sort(mountainList, distanceComparator);
 
                         else if (filter.equals("난이도순"))
