@@ -25,7 +25,7 @@ android {
         }
         python{
             buildPython "C:\\Users\\abo33\\AppData\\Local\\Programs\\Python\\Python38\\python.exe"
-            buildPython "/usr/bin/python3"
+            buildPython "C:/Users/Public/python.exe"
             buildPython "python3"
             buildPython "python"
             pip{

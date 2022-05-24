@@ -19,22 +19,22 @@
 
     <TextView
         android:id="@+id/userName"
-        android:layout_width="wrap_content"
+        android:layout_width="171dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_weight="3"
-        android:gravity="center"
         android:fontFamily="@font/bold"
+        android:gravity="center"
         android:text="name" />
 
     <TextView
         android:id="@+id/userScore"
-        android:layout_width="wrap_content"
+        android:layout_width="121dp"
         android:layout_height="match_parent"
         android:layout_gravity="end"
         android:layout_weight="1"
-        android:gravity="center"
         android:fontFamily="@font/bold"
+        android:gravity="center"
         android:text="score" />
 
 

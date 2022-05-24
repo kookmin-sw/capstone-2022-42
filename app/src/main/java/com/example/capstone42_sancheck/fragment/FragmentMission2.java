@@ -42,6 +42,7 @@ public class FragmentMission2 extends Fragment {
     int Midx;
     int weeklyCount;
     int dailyCount;
+    int walkWeekly;
     String dow;
     List<Integer> mission;
     int cnt;
@@ -105,22 +106,27 @@ public class FragmentMission2 extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User me = snapshot.getValue(User.class);
+                walkWeekly  =(Long.valueOf(me.getWalkTotal()).intValue());
+
+
                 dow =me.getWeeklyCheck();
-               dailyCount = me.getMissionDailyCount();
-               weeklyCount =me.getMissionWeeklyCount();
-                 mission = me.getMissionWeekly();
+                dailyCount = me.getMissionDailyCount();
+                weeklyCount =me.getMissionWeeklyCount();
+                mission = me.getMissionWeekly();
                 cnt = mission.get(0);
                 Midx = mission.get(7);
-             int walkWeekly =(Long.valueOf(me.getWalkTotal()).intValue());
-
-              if(mission.get(7)==0||dow.equals("월")||dow.equals("M")) {
-                 mission= new ArrayList(Collections.nCopies(8, 0));
-                 me.setMissionDailyCount(0);
-                 me.setWeeklyCheck("초기화");
-                 Midx = weeklyM(me.getTrailComplited());
-                 mission.set(0,0);
+                if(dow.equals("월")||dow.equals("M")){
+                    mission= new ArrayList(Collections.nCopies(8, 0));
+                    me.setMissionDailyCount(0);
+                    me.setWeeklyCheck("초기화");
+                    mission.set(0,0);
+                    me.setMissionWeekly(mission);
+                    database.child("Users").child(uid).setValue(me);
+                }
+              if(mission.get(7)==0) {
+                 if(me.getTrailComplited()==null) Midx = (int) (Math.random() * 1000);
+                 else Midx = weeklyM(me.getTrailComplited());
                  mission.set(7,Midx);
-                 me.setMissionWeekly(mission);
                  database.child("Users").child(uid).setValue(me);
               }
 
@@ -136,7 +142,6 @@ public class FragmentMission2 extends Fragment {
                 btn3.setEnabled(mission.get(3)!=1);
                 btn4.setEnabled(mission.get(4)!=1);
                 btn5.setEnabled(mission.get(5)!=1);
-
 
 
 
@@ -212,11 +217,13 @@ public class FragmentMission2 extends Fragment {
                 }
 
                 //주간미션 5. 등산하기
-                if(mission.get(5)==0 && (me.getTrailComplited()).contains(Midx)){
+                if(me.getTrailComplited()!=null){
+                if(mission.get(5)==0 && (me.getTrailComplited()).contains(Midx)) {
+
                     btn5.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            score = score+100;
+                            score = score + 100;
                             database.child("Users").child(uid).child("score").setValue(score);
                             database.child("Users").child(uid).child("missionWeekly").child("5").setValue(1);
                             btn5.setEnabled(false);
@@ -226,6 +233,7 @@ public class FragmentMission2 extends Fragment {
                             database.child("Users").child(uid).child("missionWeeklyCount").setValue(weeklyCount);
                         }
                     });
+                }
                 }
 
 
@@ -237,7 +245,6 @@ public class FragmentMission2 extends Fragment {
 
             }
         });
-
 
 
 
