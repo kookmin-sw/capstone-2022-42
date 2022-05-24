@@ -77,14 +77,7 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
                     User post = snapshot.getValue(User.class);
 
                     if (steps != post.getWalkDaily()){
-                        post.setWalkDaily(steps);
-                        database.child("Users").child(uid).child("walkDaily").setValue(steps)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
-                                        Log.d("FragmentWalk: walkDaily", "유저 정보 수정 확인!");
-                                    }
-                                });
+                        steps = post.getWalkDaily();
                     }
                     tv_sensor.setText(String.valueOf(steps));
 
@@ -136,6 +129,39 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
             if(sensorEvent.values[0]==1.0f){
                 steps++;
                 tv_sensor.setText(String.valueOf(steps));
+
+                auth = FirebaseAuth.getInstance();
+                FirebaseUser user = auth.getCurrentUser();
+
+                final String uid = user.getUid();
+
+                database.child("Users").child(uid).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.getValue(User.class) != null) {
+                            User post = snapshot.getValue(User.class);
+
+                            if (steps > post.getWalkDaily()) {
+                                post.setWalkDaily(steps);
+                                database.child("Users").child(uid).child("walkDaily").setValue(steps)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                Log.d("onSensorChanged", "유저 정보 수정 확인!");
+                                            }
+                                        });
+                            }
+                        }
+                        else{
+                            Log.d("onSensorChanged", "유저 정보 없음...");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Log.d("onSensorChanged", "유저 정보 불러오기 실패ㅠ");
+                    }
+                });
             }
         }
 

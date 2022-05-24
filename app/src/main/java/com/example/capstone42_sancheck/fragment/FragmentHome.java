@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -19,6 +20,8 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.example.capstone42_sancheck.R;
 import com.example.capstone42_sancheck.activity.MainActivity;
+import com.example.capstone42_sancheck.adapter.trailCompleteListviewAdapter;
+import com.example.capstone42_sancheck.object.CompleteMountain;
 import com.example.capstone42_sancheck.object.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -32,11 +35,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FragmentHome extends Fragment {
     private View view;
 
     private FirebaseAuth auth;
-    private DatabaseReference database;
+    private DatabaseReference database, databaseReference;
 
     private TextView tv_name;
     private ImageView iv_profile;
@@ -55,6 +61,10 @@ public class FragmentHome extends Fragment {
     private TextView tv_walkSat;
 
     private ProgressBar mokpyoprogressBar;
+
+    private ListView lv_trailMemo;
+    private trailCompleteListviewAdapter adapter;
+    private FirebaseDatabase mountainDB;
 
     @Nullable
     @Override
@@ -78,6 +88,11 @@ public class FragmentHome extends Fragment {
         tv_walkSat = (TextView) view.findViewById(R.id.tv_walkSat);
 
         mokpyoprogressBar = (ProgressBar) view.findViewById(R.id.mokpyoprogressBar);
+
+        lv_trailMemo = (ListView) view.findViewById(R.id.lv_trailMemo);
+        adapter = new trailCompleteListviewAdapter();
+        mountainDB = FirebaseDatabase.getInstance("https://capstone42-sancheck-96817.firebaseio.com");
+        databaseReference = mountainDB.getReference();
 
         auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
@@ -151,6 +166,39 @@ public class FragmentHome extends Fragment {
                     tv_walkSat.setText(String.valueOf(post.getWalkSat()));
 
                     mokpyoprogressBar.setProgress(post.getWalkDaily());
+
+                    List<CompleteMountain> mountainList = new ArrayList<>();
+                    mountainList.clear();
+                    adapter.clear();
+
+                    if (post.trailComplited != null){
+                        for (int i = (post.trailComplited).size()-1; i > (post.trailComplited).size()-11; i--){
+                            if (i < 0){
+                                break;
+                            }
+                            else{
+                                String monthDay = post.trailComplitedDate.get(i).substring(5);
+                                String year = post.trailComplitedDate.get(i).substring(0, 4);
+
+                                databaseReference.child(String.valueOf(post.trailComplited.get(i))).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                        if(!task.isSuccessful()){
+                                            Log.d("trailComplitedListView", "Error");
+                                        }
+                                        else{
+                                            CompleteMountain completeMountain = new CompleteMountain(monthDay, year, task.getResult().child("MNTN_NM").getValue(String.class), task.getResult().child("PMNTN_NM").getValue(String.class));
+                                            mountainList.add(completeMountain);
+                                            adapter.addItem(monthDay, year, task.getResult().child("MNTN_NM").getValue(String.class), task.getResult().child("PMNTN_NM").getValue(String.class));
+                                            Log.d("adapter", "add Item");
+                                            lv_trailMemo.setAdapter(adapter);
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                        //lv_trailMemo.setAdapter(adapter);
+                    }
                 } else{
                     Log.d("FragmentHome", "유저 정보 없음...");
                 }
