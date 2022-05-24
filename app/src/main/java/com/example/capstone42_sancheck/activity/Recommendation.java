@@ -45,13 +45,27 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import androidx.core.content.ContextCompat;
 
 public class Recommendation extends AppCompatActivity  {
     TextView textView;
     private FusedLocationProviderClient client;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
 
+    String level;
+    double time;
+    double distance;
     double latitude1;
     double longitude1;
 
@@ -77,6 +91,32 @@ public class Recommendation extends AppCompatActivity  {
         dialog.setMessage("processing...");
         dialog.show();
         super.onCreate(savedInstanceState);
+
+        mDatabase = database.getReference();
+        mAuth = FirebaseAuth.getInstance();
+        final FirebaseUser user = mAuth.getCurrentUser();
+        final String uid = user.getUid();
+
+        mDatabase.child("Users").child(uid).child("recommend").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                level = snapshot.child("0").getValue(String.class);
+                String s_time = snapshot.child("1").getValue(String.class);
+                String s_distance = snapshot.child("2").getValue(String.class);
+
+                time = Character.getNumericValue(s_time.charAt(0));
+                distance = Character.getNumericValue(s_distance.charAt(0));
+
+                Log.d("time = ", String.valueOf(level));
+                Log.d("time = ", String.valueOf(time));
+                Log.d("time = ", String.valueOf(distance));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
         setContentView(R.layout.activity_recommendation);

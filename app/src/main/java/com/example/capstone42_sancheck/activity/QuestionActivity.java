@@ -14,6 +14,10 @@ import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
 import com.example.capstone42_sancheck.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -40,12 +44,17 @@ public class QuestionActivity extends AppCompatActivity {
     private String level;
     private String time;
     private String distance;
+    private ArrayList recommendArray;
+
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference = database.getReference();
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
-        ArrayList recommendArray = new ArrayList<>();
+        recommendArray = new ArrayList<>();
 
         btn_ok = (Button) findViewById(R.id.btn_ok);
         rg_level = (RadioGroup) findViewById(R.id.rg_level);
@@ -66,6 +75,10 @@ public class QuestionActivity extends AppCompatActivity {
         rb_oneKm = (RadioButton) findViewById(R.id.oneKm_btn);
         rb_twoKm = (RadioButton) findViewById(R.id.twoKm_btn);
         rb_threeKm = (RadioButton) findViewById(R.id.threeKm_btn);
+
+        mAuth = FirebaseAuth.getInstance();
+        final FirebaseUser user = mAuth.getCurrentUser();
+        final String uid = user.getUid();
 
         rg_level.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -140,7 +153,9 @@ public class QuestionActivity extends AppCompatActivity {
                 recommendArray.add(time);
                 recommendArray.add(distance);
                 Log.d("유저가 고른 추천리스트", String.valueOf(recommendArray));
+                databaseReference.child("Users").child(uid).child("recommend").setValue(recommendArray);
                 startActivity(intent);
+
             }
         });
 
