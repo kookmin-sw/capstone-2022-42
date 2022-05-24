@@ -2,18 +2,18 @@ package com.example.capstone42_sancheck.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.capstone42_sancheck.R;
-import com.example.capstone42_sancheck.adapter.RecyclerViewAdapter;
-import com.example.capstone42_sancheck.object.Mountain;
+import com.example.capstone42_sancheck.adapter.CartListViewAdapter;
+import com.example.capstone42_sancheck.object.CartMountain;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,86 +27,62 @@ import java.util.ArrayList;
 
 public class CartActivity extends AppCompatActivity {
     
-    private RecyclerView mRecyclerView;
-    private RecyclerView.LayoutManager mLayoutManager;
+    private ListView mListView;
     private ImageView iv_back;
     private FirebaseDatabase database, mountainDB;
     private DatabaseReference databaseReference, mountaindatabaseReference;
     private FirebaseAuth auth;
-    RecyclerViewAdapter myAdapter;
-    ArrayList<Mountain> mountainArrayList = new ArrayList<>();
+    private CartListViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        mRecyclerView = findViewById(R.id.rv_cart);
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        mListView = (ListView) findViewById(R.id.lv_cart);
+        adapter = new CartListViewAdapter();
 
         auth = FirebaseAuth.getInstance();
         String uid = auth.getCurrentUser().getUid();
         database = FirebaseDatabase.getInstance("https://capstone42-sancheck-96817-default-rtdb.firebaseio.com/");
         databaseReference = database.getReference("Users");
         mountainDB = FirebaseDatabase.getInstance("https://capstone42-sancheck-96817.firebaseio.com/");
-//        mountaindatabaseReference = mountainDB.getReference();
+
+        ArrayList<CartMountain> mountainArrayList = new ArrayList<>();
+        mountainArrayList.clear();
+        adapter.clear();
 
         databaseReference.child(uid).child("trailPlan").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mountainArrayList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    Mountain mountainInfo = new Mountain();
-                    mountainInfo.setDrawableId(R.drawable.home_mission_ex); // 사진
                     mountaindatabaseReference = mountainDB.getReference(String.valueOf(Integer.parseInt(dataSnapshot.getValue(Long.class).toString()) - 1));
-                    mountaindatabaseReference.child("MNTN_NM").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    mountaindatabaseReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<DataSnapshot> task) {
                             if (!task.isSuccessful()) {
                                 Log.e("CartActivity", "Error getting data", task.getException());
                             }
                             else {
-                                mountainInfo.setMNTN_NM(task.getResult().getValue(String.class));
+                                CartMountain mountain = new CartMountain();
+                                mountain.setMNTN_NM(task.getResult().child("MNTN_NM").getValue(String.class));
+                                mountain.setPMNTN_NM(task.getResult().child("PMNTN_NM").getValue(String.class));
+                                mountain.setPMNTN_DFFL(task.getResult().child("PMNTN_DFFL").getValue(String.class));
+                                mountain.setDrawableId(R.drawable.home_mission_ex);
+                                mountainArrayList.add(mountain);
+                                adapter.addItem(mountain.getMNTN_NM(), mountain.getPMNTN_NM(), mountain.getPMNTN_DFFL(), mountain.getDrawableId());
+                                mListView.setAdapter(adapter);
                             }
                         }
                     });
-                    mountaindatabaseReference.child("PMNTN_NM").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<DataSnapshot> task) {
-                            if (!task.isSuccessful()) {
-                                Log.e("CartActivity", "Error getting data", task.getException());
-                            }
-                            else {
-                                mountainInfo.setPMNTN_NM(task.getResult().getValue(String.class));
-                            }
-                        }
-                    });
-                    mountaindatabaseReference.child("PMNTN_DFFL").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<DataSnapshot> task) {
-                            if (!task.isSuccessful()) {
-                                Log.e("CartActivity", "Error getting data", task.getException());
-                            }
-                            else {
-                                mountainInfo.setPMNTN_DFFL(task.getResult().getValue(String.class));
-                            }
-                        }
-                    });
-                    mountainArrayList.add(mountainInfo);
                 }
-                myAdapter.notifyDataSetChanged();
             }
-
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
-        myAdapter = new RecyclerViewAdapter(mountainArrayList);
-        mRecyclerView.setAdapter(myAdapter);
 
         iv_back = (ImageView) findViewById(R.id.iv_back);
 
@@ -117,7 +93,5 @@ public class CartActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 }

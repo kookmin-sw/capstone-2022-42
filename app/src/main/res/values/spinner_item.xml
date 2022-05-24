@@ -4,7 +4,6 @@
         <item> 기본 검색 </item>
         <item> 구간이름순 </item>
         <item> 길이순 </item>
-        <item> 소요시간순 </item>
         <item> 난이도순 </item>
     </string-array>
 </resources>
