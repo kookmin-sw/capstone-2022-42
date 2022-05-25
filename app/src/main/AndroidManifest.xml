@@ -59,6 +59,7 @@
             android:exported="true" />
         <activity android:name=".activity.CartActivity" />
         <activity android:name=".activity.CartSearchActivity" />
+        <activity android:name=".activity.CompleteSearchActivity" />
 
         <receiver android:name=".receiver.DateReceiver"
             android:enabled="true"

@@ -2,11 +2,13 @@ package com.example.capstone42_sancheck.fragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,8 +22,11 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.capstone42_sancheck.R;
+import com.example.capstone42_sancheck.activity.CartSearchActivity;
+import com.example.capstone42_sancheck.activity.CompleteSearchActivity;
 import com.example.capstone42_sancheck.activity.MainActivity;
 import com.example.capstone42_sancheck.adapter.trailCompleteListviewAdapter;
+import com.example.capstone42_sancheck.object.CartMountain;
 import com.example.capstone42_sancheck.object.CompleteMountain;
 import com.example.capstone42_sancheck.object.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -232,9 +237,11 @@ public class FragmentHome extends Fragment {
                                         Log.d("trailComplitedListView", "Error");
                                     }
                                     else{
-                                        CompleteMountain completeMountain = new CompleteMountain(monthDay, year, task.getResult().child("MNTN_NM").getValue(String.class), task.getResult().child("PMNTN_NM").getValue(String.class));
+                                        CompleteMountain completeMountain = new CompleteMountain(monthDay, year, task.getResult().child("MNTN_NM").getValue(String.class), task.getResult().child("PMNTN_NM").getValue(String.class),
+                                                task.getResult().child("INDEX").getValue(Integer.class), task.getResult().child("PMNTN_LT").getValue(Double.class), task.getResult().child("START_PNT").getValue(String.class), task.getResult().child("END_PNT").getValue(String.class));
                                         mountainList.add(completeMountain);
-                                        adapter.addItem(monthDay, year, task.getResult().child("MNTN_NM").getValue(String.class), task.getResult().child("PMNTN_NM").getValue(String.class));
+                                        adapter.addItem(monthDay, year, task.getResult().child("MNTN_NM").getValue(String.class), task.getResult().child("PMNTN_NM").getValue(String.class),
+                                                task.getResult().child("INDEX").getValue(Integer.class), task.getResult().child("PMNTN_LT").getValue(Double.class), task.getResult().child("START_PNT").getValue(String.class), task.getResult().child("END_PNT").getValue(String.class));
                                         Log.d("adapter", "add Item");
                                         lv_trailMemo.setAdapter(adapter);
                                     }
@@ -251,6 +258,22 @@ public class FragmentHome extends Fragment {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.d("FragmentHome", "유저 정보 불러오기 실패ㅠ");
+            }
+
+
+        });
+        lv_trailMemo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                CompleteMountain mountain = (CompleteMountain) adapter.getItem(i);
+                Intent intent = new Intent(view.getContext(), CompleteSearchActivity.class);
+                intent.putExtra("index", mountain.getIndex());
+                intent.putExtra("m_name", mountain.getMountainName());
+                intent.putExtra("pm_name", mountain.getPmountainName());
+                intent.putExtra("lt", mountain.getLt());
+                intent.putExtra("start", mountain.getSTART_PNT());
+                intent.putExtra("end", mountain.getEND_PNT());
+                startActivity(intent);
             }
         });
 
