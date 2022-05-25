@@ -64,7 +64,14 @@
         <entry key="..\:/Users/Public/AndroidStudioProjects/git2/capstone-2022-42/app/src/main/res/layout/frag_rank.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/git2/capstone-2022-42/app/src/main/res/layout/frag_rank2.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/git2/capstone-2022-42/app/src/main/res/layout/frag_search_listview_item.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/layout/fragment_mission1.xml" value="0.16354166666666667" />
+        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/drawable/mission_bg.xml" value="0.1615" />
+        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/drawable/mission_btn.xml" value="0.1" />
+        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/layout/activity_recommendation.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/layout/activity_search.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/layout/frag_home_listview_item.xml" value="0.16354166666666667" />
+        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/layout/fragment_mission1.xml" value="0.1" />
+        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/layout/fragment_mission2.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/jungmin/capston/capstone-2022-42/app/src/main/res/layout/fragment_mission3.xml" value="0.22" />
         <entry key="app/src/main/res/drawable/circular_progress_bar.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/circular_shape.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.1" />
