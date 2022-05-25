@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Capstone42_Sancheck</string>
+    <string name="app_name">산Check</string>
     <string name="title_activity_recommendation">Recommendation</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"

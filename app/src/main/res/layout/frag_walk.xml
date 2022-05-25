@@ -30,13 +30,14 @@
         android:layout_height="300dp"
         android:gravity="center_horizontal"
         >
+
         <ProgressBar
             android:id="@+id/progress_bar"
             style="?android:attr/progressBarStyleHorizontal"
+            android:max="10000"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
             android:background="@drawable/circular_shape"
             android:indeterminate="false"
             android:progressDrawable="@drawable/circular_progress_bar"

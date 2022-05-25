@@ -1,16 +1,21 @@
 package com.example.capstone42_sancheck.fragment;
 
 import android.Manifest;
+import android.app.AlarmManager;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,12 +28,14 @@ import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.capstone42_sancheck.R;
 import com.example.capstone42_sancheck.activity.MainActivity;
 import com.example.capstone42_sancheck.object.User;
+import com.example.capstone42_sancheck.receiver.AlarmReceiver;
 import com.example.capstone42_sancheck.receiver.DateReceiver;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,6 +45,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class FragmentWalk extends Fragment implements SensorEventListener {
     private View view;
@@ -51,6 +63,16 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
 
     private DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     private FirebaseAuth auth;
+
+    // 알림 기능 변수
+    private AlarmManager alarmManager;
+
+    private NotificationManager notificationManager;
+
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
+
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyy-MM-dd");
 
     @Nullable
     @Override
@@ -100,7 +122,22 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
                     }
                     tv_sensor.setText(String.valueOf(steps));
                     progressBar.setProgress(steps); //user input steps
-                    progressBar.setMax(1000); //user daily max stepcount
+                    progressBar.setMax(post.getGoal()); //user daily max stepcount
+
+                    notificationManager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+
+                    alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+
+                    pref = getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
+                    editor = pref.edit();
+                    boolean temp = pref.getBoolean("alarm", false);
+                    String clearDate = pref.getString("date", getDate());
+
+                    if (steps >= post.getGoal() && temp && !clearDate.equals(getDate())){
+                        editor.putString("date", getDate());
+                        editor.commit();
+                        setAlarm();
+                    }
 
                     btn_reset.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -115,6 +152,7 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
                                         }
                                     });
                             tv_sensor.setText(String.valueOf(steps));
+                            progressBar.setProgress(steps); //user input steps
                         }
                     });
                 } else{
@@ -127,6 +165,11 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
                 Log.d("FragmentWalk", "유저 정보 불러오기 실패ㅠ");
             }
         });
+
+        BroadcastReceiver br = new DateReceiver();
+
+        IntentFilter filter = new IntentFilter(Intent.ACTION_DATE_CHANGED);
+        getActivity().registerReceiver(br, filter);
 
         return view;
     }
@@ -142,11 +185,6 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
         if(stepCounterSensor != null){
             sm.registerListener(this, stepCounterSensor, SensorManager.SENSOR_DELAY_FASTEST);
         }
-
-        BroadcastReceiver br = new DateReceiver();
-
-        IntentFilter filter = new IntentFilter(Intent.ACTION_DATE_CHANGED);
-        getActivity().registerReceiver(br, filter);
     }
 
     @Override
@@ -155,6 +193,7 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
             if(sensorEvent.values[0]==1.0f){
                 steps++;
                 tv_sensor.setText(String.valueOf(steps));
+                progressBar.setProgress(steps); //user input steps
 
                 auth = FirebaseAuth.getInstance();
                 FirebaseUser user = auth.getCurrentUser();
@@ -200,5 +239,35 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
 
+    }
+
+    private String getDate(){
+        long now = System.currentTimeMillis();
+        Date date = new Date(now);
+        return simpleDateFormat.format(date);
+    }
+
+    private void setAlarm(){
+        // AlarmReceiver에 값 전달
+        Intent receiverIntent = new Intent(getActivity(), AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, receiverIntent, 0);
+
+        Log.d("setAlarm", "목표 걸음 달성 알림");
+
+        String form = getDate() + " 23:59:59"; // 하루가 끝나기 전 목표치 달성한 경우 알림
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date datetime = null;
+        try{
+            datetime = dateFormat.parse(form);
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(datetime);
+
+        Log.d("setAlarm", form + "에 알람 울림!");
+
+        alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
     }
 }

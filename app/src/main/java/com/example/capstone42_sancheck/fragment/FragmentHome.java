@@ -218,6 +218,7 @@ public class FragmentHome extends Fragment {
                     tv_walkFri.setText(String.valueOf(post.getWalkFri()));
                     tv_walkSat.setText(String.valueOf(post.getWalkSat()));
 
+                    mokpyoprogressBar.setMax(post.getGoal());
                     mokpyoprogressBar.setProgress(post.getWalkDaily());
 
                     List<CompleteMountain> mountainList = new ArrayList<>();
