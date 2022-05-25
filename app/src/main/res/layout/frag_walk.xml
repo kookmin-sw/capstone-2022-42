@@ -14,10 +14,10 @@
         android:text="오늘의 걸음"
         android:textColor="@color/black"
         android:textSize="40dp">
-    </TextView>
+    </TextView>f
 
     <TextView
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:orientation="vertical"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:id="@+id/item_board">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/item_board_title"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8sp"-->
+<!--        android:layout_marginLeft="8sp"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="White"-->
+<!--        tools:text="TITLE" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/item_board_content"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="Gray"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_marginLeft="8sp"-->
+<!--        android:maxLines="1"-->
+<!--        android:ellipsize="end"-->
+<!--        tools:text="Contents" />-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="8sp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/item_board_time"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="8dp"-->
+<!--            android:textColor="Gray"-->
+<!--            android:textSize="16sp"-->
+<!--            tools:text="Time" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/item_board_writer"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="8dp"-->
+<!--            android:textColor="Gray"-->
+<!--            android:textSize="16sp"-->
+<!--            tools:text="Writer" />-->
+
+<!--        <View-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1" />-->
+
+
+<!--        &lt;!&ndash; 중략 &ndash;&gt;-->
+
+<!--    </LinearLayout>-->
+
+<!--</LinearLayout>-->
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_board">
+
+    <TextView
+        android:id="@+id/rec_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:layout_marginLeft="8sp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="TITLE" />
+<!--    android:textColor="White"-->
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/rec_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textSize="16sp"
+                tools:text="Time" />
+<!--        android:textColor="Gray"-->
+
+    </LinearLayout>
+
+</LinearLayout>

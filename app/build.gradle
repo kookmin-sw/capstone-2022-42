@@ -24,10 +24,9 @@ android {
             abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
         }
         python{
-            buildPython "C:\\Users\\abo33\\AppData\\Local\\Programs\\Python\\Python38\\python.exe"
+            buildPython "/usr/local/bin/python3"
             buildPython "/usr/bin/python3"
             buildPython "python3"
-            buildPython "python"
             pip{
                 install "pandas"
                 install "scikit-learn"
@@ -111,6 +110,8 @@ dependencies {
     implementation 'com.android.support:cardview-v7:26.1.0'
     //noinspection GradleCompatible
     implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

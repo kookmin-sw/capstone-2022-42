@@ -1,71 +1,41 @@
 package com.example.capstone42_sancheck.activity;
 
-import static android.Manifest.permission.ACCESS_FINE_LOCATION;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.location.LocationListener;
-import android.widget.Button;
-import android.widget.ProgressBar;
-
 
 
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
 import com.example.capstone42_sancheck.R;
-import com.example.capstone42_sancheck.fragment.FragmentBoard;
-import com.example.capstone42_sancheck.fragment.FragmentHome;
-import com.example.capstone42_sancheck.fragment.FragmentRank;
-import com.example.capstone42_sancheck.fragment.FragmentSearch;
-import com.example.capstone42_sancheck.fragment.FragmentWalk;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import androidx.core.content.ContextCompat;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class Recommendation extends AppCompatActivity  {
     TextView textView;
     private FusedLocationProviderClient client;
-    private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
-    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    RecyclerView recyclerView;
+    SimpleTextAdapter simpleTextAdapter;
 
-    String level;
-    double time;
-    double distance;
+
     double latitude1;
     double longitude1;
 
@@ -92,38 +62,13 @@ public class Recommendation extends AppCompatActivity  {
         dialog.show();
         super.onCreate(savedInstanceState);
 
-        mDatabase = database.getReference();
-        mAuth = FirebaseAuth.getInstance();
-        final FirebaseUser user = mAuth.getCurrentUser();
-        final String uid = user.getUid();
-
-        mDatabase.child("Users").child(uid).child("recommend").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                level = snapshot.child("0").getValue(String.class);
-                String s_time = snapshot.child("1").getValue(String.class);
-                String s_distance = snapshot.child("2").getValue(String.class);
-
-                time = Character.getNumericValue(s_time.charAt(0));
-                distance = Character.getNumericValue(s_distance.charAt(0));
-
-                Log.d("time = ", String.valueOf(level));
-                Log.d("time = ", String.valueOf(time));
-                Log.d("time = ", String.valueOf(distance));
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
 
         setContentView(R.layout.activity_recommendation);
         client = LocationServices.getFusedLocationProviderClient(this);
 //        spinner = (ProgressBar)findViewById(R.id.progressBar);
 
-        textView = (TextView) findViewById(R.id.textViewRecomm);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclller_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false)) ;
 
         if (! Python.isStarted()){
             Python.start(new AndroidPlatform(this));
@@ -150,12 +95,35 @@ public class Recommendation extends AppCompatActivity  {
 
         int arraySize = cityArr.length;
 
+        ArrayList<String> list  = new ArrayList<>();
+
+        simpleTextAdapter = new SimpleTextAdapter();
+
         for(int i =0; i< arraySize/2; i++){
-            textView.append(cityArr[2*i]);
-            textView.append("-");
-            textView.append(cityArr[2*i+1]);
-            textView.append("\n");
+            cityArr[2*i] = cityArr[2*i].replaceAll("[^\uAC00-\uD7A30-9a-zA-Z]","");
+            cityArr[2*i+1] = cityArr[2*i+1].replaceAll("[^\uAC00-\uD7A30-9a-zA-Z]","");
+
+            simpleTextAdapter.setArrayData(String.format(cityArr[2*i]));
+            simpleTextAdapter.setArrayData2(String.format(cityArr[2*i+1]));
+
+
+
+
+//            list.add(String.format(cityArr[2*i+1]));
+//            recyclerView.add(cityArr[2*i]);
+//            textView.append("-");
+//            textView.append(cityArr[2*i+1]);
+//            textView.append("\n");
         }
+        recyclerView.setAdapter(simpleTextAdapter);
+
+//        RecyclerView recyclerView = findViewById(R.id.textViewRecomm);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//
+//        SimpleTextAdapter adapter = new SimpleTextAdapter(list) ;
+//        recyclerView.setAdapter(adapter) ;
+
+
         // ProgressDialog 없애기
 //        dialog.dismiss();
 //        System.out.println(cityArr);
