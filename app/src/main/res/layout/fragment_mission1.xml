@@ -11,110 +11,194 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="일간미션 달성도"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <ProgressBar
-                android:id="@+id/progress0"
-                style="@android:style/Widget.ProgressBar.Horizontal"
-                android:layout_width="383dp"
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/mission_bg"
+            android:padding="10dp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:max="3"
-                android:paddingTop="12dp" />
+                android:text="일간 미션 달성도" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <ProgressBar
+                    android:id="@+id/progress0"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="383dp"
+                    android:progressTint="@color/purple_200"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingTop="12dp"
+                    android:max="3"
+                    android:paddingEnd="10dp" />
+
+                />
 
 
-        </LinearLayout>
-        <TextView
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/missionC"
-            android:text="출석하기"/>
+            android:layout_margin="10dp"
+            android:background="@drawable/mission_bg"
 
-        <LinearLayout
+            android:padding="10dp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:id="@+id/missionC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="출석하기" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+
+                <ProgressBar
+                    android:id="@+id/progress1"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:progressTint="@color/purple_200"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:max="1"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="10dp" />
+
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:backgroundTint ="@color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="+10"
+                    android:textColor="#FF000000"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="10dp"
+            android:background="@drawable/mission_bg"
+            android:padding="10dp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp">
 
-
-            <ProgressBar
-                android:id="@+id/progress1"
-                style="@android:style/Widget.ProgressBar.Horizontal"
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:max="1"
-                android:paddingTop="12dp" />
+                android:text="삼천보 걷기" />
 
-
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="+10" />
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
 
-        </LinearLayout>
-        <TextView
+                <ProgressBar
+                    android:id="@+id/progress2"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:max="3000"
+                    android:progressTint="@color/purple_200"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="10dp" />
+
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+
+                    android:text="+20"
+                    android:textColor="#FF000000"
+                    android:textSize="16sp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:backgroundTint ="@color/white"
+                    />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3000보 걷기"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="10dp"
+            android:background="@drawable/mission_bg"
+            android:padding="10dp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:visibility="visible">
 
-            <ProgressBar
-                android:id="@+id/progress2"
-                style="@android:style/Widget.ProgressBar.Horizontal"
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:max="3000"
-                android:paddingTop="12dp" />
+                android:text="오천보 걷기" />
 
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="+20" />
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
 
-        </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="5000보 걷기"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <ProgressBar
+                    android:id="@+id/progress3"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:max="5000"
+                    android:progressTint="@color/purple_200"
+                    android:paddingTop="12dp"
+                    android:paddingRight="10dp" />
 
-            <ProgressBar
-                android:id="@+id/progress3"
-                style="@android:style/Widget.ProgressBar.Horizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:max="5000"
-                android:paddingTop="12dp" />
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:backgroundTint ="@color/white"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="10dp"
+                    android:textColor="#FF000000"
+                    android:text="+30"
+                    android:textSize="16sp" />
 
+            </LinearLayout>
+        </FrameLayout>
 
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="+30" />
-
-        </LinearLayout>
     </LinearLayout>
 
 
