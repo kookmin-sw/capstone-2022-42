@@ -99,12 +99,16 @@ public class CartListViewAdapter extends BaseAdapter {
         return view;
     }
 
-    public void addItem(String MN_Name, String PMNTN_Name, String PMNTN_DFFL, int drawableId) {
+    public void addItem(String MN_Name, String PMNTN_Name, String PMNTN_DFFL, int drawableId, int index, double PMNTN_LT, String START_PNT, String END_PNT) {
         CartMountain item = new CartMountain();
         item.setMNTN_NM(MN_Name);
         item.setPMNTN_NM(PMNTN_Name);
         item.setPMNTN_DFFL(PMNTN_DFFL);
         item.setDrawableId(drawableId);
+        item.setIndex(index);
+        item.setPMNTN_LT(PMNTN_LT);
+        item.setSTART_PNT(START_PNT);
+        item.setEND_PNT(END_PNT);
 
         arrayList.add(item);
     }

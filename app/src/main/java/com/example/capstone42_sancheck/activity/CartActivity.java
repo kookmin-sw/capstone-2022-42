@@ -7,9 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.capstone42_sancheck.R;
 import com.example.capstone42_sancheck.adapter.CartListViewAdapter;
@@ -68,8 +68,13 @@ public class CartActivity extends AppCompatActivity {
                                 mountain.setPMNTN_NM(task.getResult().child("PMNTN_NM").getValue(String.class));
                                 mountain.setPMNTN_DFFL(task.getResult().child("PMNTN_DFFL").getValue(String.class));
                                 mountain.setDrawableId(R.drawable.home_mission_ex);
+                                mountain.setIndex(Integer.parseInt(dataSnapshot.getValue(Long.class).toString()));
+                                mountain.setPMNTN_LT(task.getResult().child("PMNTN_LT").getValue(Double.class));
+                                mountain.setSTART_PNT(task.getResult().child("START_PNT").getValue(String.class));
+                                mountain.setEND_PNT(task.getResult().child("END_PNT").getValue(String.class));
                                 mountainArrayList.add(mountain);
-                                adapter.addItem(mountain.getMNTN_NM(), mountain.getPMNTN_NM(), mountain.getPMNTN_DFFL(), mountain.getDrawableId());
+                                adapter.addItem(mountain.getMNTN_NM(), mountain.getPMNTN_NM(), mountain.getPMNTN_DFFL(), mountain.getDrawableId(), mountain.getIndex()
+                                , mountain.getPMNTN_LT(), mountain.getSTART_PNT(), mountain.getEND_PNT());
                                 mListView.setAdapter(adapter);
                             }
                         }
@@ -89,6 +94,22 @@ public class CartActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                CartMountain mountain = (CartMountain) adapter.getItem(i);
+                Intent intent = new Intent(view.getContext(), CartSearchActivity.class);
+                intent.putExtra("index", mountain.getIndex());
+                intent.putExtra("m_name", mountain.getMNTN_NM());
+                intent.putExtra("pm_name", mountain.getPMNTN_NM());
+                intent.putExtra("lt", mountain.getPMNTN_LT());
+                intent.putExtra("pm_dffl", mountain.getPMNTN_DFFL());
+                intent.putExtra("start", mountain.getSTART_PNT());
+                intent.putExtra("end", mountain.getEND_PNT());
                 startActivity(intent);
             }
         });
