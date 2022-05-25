@@ -181,24 +181,19 @@ public class SearchActivity extends AppCompatActivity implements
                             String getTime = sdf.format(date);
 
                             // 등산로 인덱스 추가
+                            // 등산 완주 날짜 추가
                             if (snapshot.child("trailComplited").exists()) {
                                 Toast.makeText(view.getContext(), "등산로를 완주하였습니다!", Toast.LENGTH_SHORT).show();
                                 User user = snapshot.getValue(User.class);
+                                user.setTrailComplitedDate(getTime, user.trailComplitedDate);
                                 user.setTrailComplitedAdd(index, user.trailComplited);
                                 databaseReference.child(uid).setValue(user);
                             } else {
+                                List<String> trailComplitedDate = new ArrayList<>(Arrays.asList(getTime));
                                 List<Integer> trailComplited = new ArrayList<>(Arrays.asList(index));
+                                databaseReference.child(uid).child("trailComplitedDate").setValue(trailComplitedDate);
                                 databaseReference.child(uid).child("trailComplited").setValue(trailComplited);
                                 Toast.makeText(view.getContext(), "등산로를 완주하였습니다!", Toast.LENGTH_SHORT).show();
-                            }
-                            // 등산로 완주 날짜 추가
-                            if (snapshot.child("trailComplitedDate").exists()) {
-                                User user = snapshot.getValue(User.class);
-                                user.setTrailComplitedDate(getTime, user.trailComplitedDate);
-                                databaseReference.child(uid).setValue(user);
-                            } else {
-                                List<String> trailComplitedDate = new ArrayList<>(Arrays.asList(getTime));
-                                databaseReference.child(uid).child("trailComplitedDate").setValue(trailComplitedDate);
                             }
                         }
                         mountaindatabaseReference = mountainDB.getReference(String.valueOf(index - 1));

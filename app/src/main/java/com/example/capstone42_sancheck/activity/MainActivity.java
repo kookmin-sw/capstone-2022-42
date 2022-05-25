@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
 //    private ProgressBar spinner;
     private ProgressBar pgsBar;
 
+    // 알림 버튼 상태 저장
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,11 +85,31 @@ public class MainActivity extends AppCompatActivity {
         iv_heart = (ImageView) findViewById(R.id.iv_heart);
         iv_recommendation = (ImageView) findViewById(R.id.iv_recommendation);
 
+        pref = getSharedPreferences("pref", Context.MODE_PRIVATE);
+        editor = pref.edit();
+
+        boolean temp = pref.getBoolean("alarm", false);
+        if (temp == true){
+            iv_alram.setSelected(true);
+        } else{
+            iv_alram.setSelected(false);
+        }
+
         iv_alram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AlramActivity.class);
-                startActivity(intent);
+                if (iv_alram.isSelected()){
+                    iv_alram.setSelected(false);
+
+                    editor.putBoolean("alarm", false);
+                    editor.commit();
+                }
+                else{
+                    iv_alram.setSelected(true);
+
+                    editor.putBoolean("alarm", true);
+                    editor.commit();
+                }
             }
         });
         iv_heart.setOnClickListener(new View.OnClickListener() {

@@ -175,11 +175,12 @@
                             tools:layout_editor_absoluteX="-2dp" />
 
                         <Button
+                            android:id="@+id/btn_goal"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:backgroundTint="#4CAF50"
                             android:fontFamily="@font/marubold"
-                            android:text="최근1주"
+                            android:text="걸음 수 목표 설정"
                             android:layout_marginBottom="0dp"
                             android:layout_marginStart="200dp"
                             />
@@ -199,7 +200,7 @@
             android:orientation="horizontal">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="40dp"
+                    android:layout_width="42dp"
                     android:layout_height="80dp"
                     android:layout_marginRight="15dp"
                     android:background="@drawable/home_box"
@@ -229,7 +230,7 @@
                             app:layout_constraintStart_toStartOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="40dp"
+                    android:layout_width="42dp"
                     android:layout_height="80dp"
                     android:layout_marginRight="15dp"
                     android:background="@drawable/home_box"
@@ -258,7 +259,7 @@
                             app:layout_constraintStart_toStartOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="40dp"
+                    android:layout_width="42dp"
                     android:layout_height="80dp"
                     android:layout_marginRight="15dp"
 
@@ -288,7 +289,7 @@
                             app:layout_constraintStart_toStartOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="40dp"
+                    android:layout_width="42dp"
                     android:layout_height="80dp"
                     android:layout_marginRight="15dp"
 
@@ -318,7 +319,7 @@
                             app:layout_constraintStart_toStartOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="40dp"
+                    android:layout_width="42dp"
                     android:layout_height="80dp"
                     android:layout_marginRight="15dp"
 
@@ -348,7 +349,7 @@
                             app:layout_constraintStart_toStartOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="40dp"
+                    android:layout_width="42dp"
                     android:layout_height="80dp"
                     android:layout_marginRight="15dp"
 
@@ -378,7 +379,7 @@
                             app:layout_constraintStart_toStartOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="40dp"
+                    android:layout_width="42dp"
                     android:layout_height="80dp"
                     android:background="@drawable/home_box"
                     >

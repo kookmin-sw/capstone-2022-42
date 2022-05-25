@@ -1,7 +1,10 @@
 package com.example.capstone42_sancheck.fragment;
 
 import android.Manifest;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -26,6 +29,7 @@ import androidx.fragment.app.Fragment;
 import com.example.capstone42_sancheck.R;
 import com.example.capstone42_sancheck.activity.MainActivity;
 import com.example.capstone42_sancheck.object.User;
+import com.example.capstone42_sancheck.receiver.DateReceiver;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -80,7 +84,18 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
                 if(snapshot.getValue(User.class) != null){
                     User post = snapshot.getValue(User.class);
 
-                    if (steps != post.getWalkDaily()){
+                    if (post.getWalkDaily() == -1){
+                        steps = 0;
+                        post.setWalkDaily(0);
+                        database.child("Users").child(uid).child("walkDaily").setValue(steps)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Log.d("FragmentWalk", "하루가 지남 - 걷기 정보 초기화");
+                                    }
+                                });
+                    }
+                    else if (steps != post.getWalkDaily()){
                         steps = post.getWalkDaily();
                     }
                     tv_sensor.setText(String.valueOf(steps));
@@ -127,6 +142,11 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
         if(stepCounterSensor != null){
             sm.registerListener(this, stepCounterSensor, SensorManager.SENSOR_DELAY_FASTEST);
         }
+
+        BroadcastReceiver br = new DateReceiver();
+
+        IntentFilter filter = new IntentFilter(Intent.ACTION_DATE_CHANGED);
+        getActivity().registerReceiver(br, filter);
     }
 
     @Override
@@ -146,6 +166,10 @@ public class FragmentWalk extends Fragment implements SensorEventListener {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.getValue(User.class) != null) {
                             User post = snapshot.getValue(User.class);
+
+                            if (post.getWalkDaily() == -1){
+                                steps = 0;
+                            }
 
                             if (steps > post.getWalkDaily()) {
                                 post.setWalkDaily(steps);

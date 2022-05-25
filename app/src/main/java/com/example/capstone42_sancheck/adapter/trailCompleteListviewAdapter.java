@@ -67,7 +67,8 @@ public class trailCompleteListviewAdapter extends BaseAdapter {
 
     public void addItem(String monthDay, String year, String mountaionName, String pmountaionName){
         CompleteMountain mountainListViewItem = new CompleteMountain(monthDay, year, mountaionName, pmountaionName);
-        arrayList.add(mountainListViewItem);
+        //arrayList.add(mountainListViewItem);
+        arrayList.add(0, mountainListViewItem);
     }
 
     public void clear() {

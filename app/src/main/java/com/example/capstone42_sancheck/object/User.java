@@ -175,11 +175,11 @@ public class User {
     }
 
     public long getWalkTotal(){
-        return walkDaily + walkTotal;
+        return walkTotal;
     }
 
-    public void setWalkTotal(long walkTotal, int walkDaily){
-        this.walkTotal = walkTotal + walkDaily;
+    public void setWalkTotal(long walkTotal){
+        this.walkTotal = walkTotal;
     }
 
     public List<Integer> getTrailComplited(){
@@ -189,14 +189,15 @@ public class User {
     public void setTrailComplitedAdd(int idx, List<Integer> trailComplited){
         // 중복 제거
         trailComplited.add(idx);
-        List<Integer> list = new ArrayList<>();
-        Set<Integer> uniqueValues = new HashSet<>();
-        for (Integer integer : trailComplited) {
-            if (uniqueValues.add(integer)) {
-                list.add(integer);
-            }
-        }
-        this.trailComplited = list;
+//        List<Integer> list = new ArrayList<>();
+//        Set<Integer> uniqueValues = new HashSet<>();
+//        for (Integer integer : trailComplited) {
+//            if (uniqueValues.add(integer)) {
+//                list.add(integer);
+//            }
+//        }
+//        this.trailComplited = list;
+        this.trailComplited = trailComplited;
     }
 
     public void setTrailComplitedDelete(int idx, List<Integer> trailComplited) {

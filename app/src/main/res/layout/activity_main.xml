@@ -43,7 +43,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginRight="10dp"
-            android:src="@drawable/ic_baseline_notifications_none_24"
+            android:src="@drawable/ic_notifications"
             app:tint="@color/black" />
     </LinearLayout>
 

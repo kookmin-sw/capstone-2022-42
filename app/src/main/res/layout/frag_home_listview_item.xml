@@ -27,7 +27,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/marubold"
-                android:text="APR"
+                android:text="05-11"
 
                 android:textColor="#b5c7ed"
                 app:layout_constraintEnd_toEndOf="parent"

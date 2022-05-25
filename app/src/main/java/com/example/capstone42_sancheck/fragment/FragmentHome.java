@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -52,6 +53,8 @@ public class FragmentHome extends Fragment {
     private TextView tv_score;
     private TextView tv_rank;
 
+    private Button btn_goal;
+
     private TextView tv_walkSun;
     private TextView tv_walkMon;
     private TextView tv_walkTue;
@@ -78,6 +81,8 @@ public class FragmentHome extends Fragment {
         tv_totalSteps = (TextView) view.findViewById(R.id.tv_totalSteps);
         tv_score = (TextView) view.findViewById(R.id.tv_score);
         tv_rank = (TextView) view.findViewById(R.id.tv_rank);
+
+        btn_goal = (Button) view.findViewById(R.id.btn_goal);
 
         tv_walkSun = (TextView) view.findViewById(R.id.tv_walkSun);
         tv_walkMon = (TextView) view.findViewById(R.id.tv_walkMon);
@@ -148,12 +153,55 @@ public class FragmentHome extends Fragment {
                         }
                     });
 
+                    btn_goal.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            AlertDialog.Builder ad = new AlertDialog.Builder(view.getContext());
+                            ad.setIcon(R.mipmap.ic_launcher);
+                            ad.setTitle("걸음 목표지수 설정");
+                            ad.setMessage("목표 걸음 수를 입력하세요:)");
+
+                            final EditText et = new EditText(view.getContext());
+                            ad.setView(et);
+
+                            ad.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    String result = et.getText().toString();
+                                    try{
+                                        int goal = Integer.parseInt(result);
+                                        mokpyoprogressBar.setMax(goal);
+                                        post.setGoal(goal);
+                                        database.child("Users").child(uid).setValue(post)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void unused) {
+                                                        Log.d("iv_edit", "유저 정보 수정 확인!");
+                                                    }
+                                                });
+                                        dialog.dismiss();
+                                    } catch (NumberFormatException e){
+                                        Log.d("btn_goal", "목표 값 입력이 적절하지 않음");
+                                    }
+                                }
+                            });
+
+                            ad.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                }
+                            });
+                            ad.show();
+                        }
+                    });
+
                     Glide.with(view)
                             .load(user.getPhotoUrl())
                             .error(R.drawable.profile)
                             .into(iv_profile);
 
-                    tv_totalSteps.setText(String.valueOf(post.getWalkTotal()));
+                    tv_totalSteps.setText(String.valueOf(post.getWalkTotal() + post.getWalkDaily()));
                     tv_score.setText(String.valueOf(post.getScore()));
                     tv_rank.setText(String.valueOf(post.getRank()));
 
@@ -171,34 +219,30 @@ public class FragmentHome extends Fragment {
                     mountainList.clear();
                     adapter.clear();
 
-                    if (post.trailComplited != null){
-                        for (int i = (post.trailComplited).size()-1; i > (post.trailComplited).size()-11; i--){
-                            if (i < 0){
-                                break;
-                            }
-                            else{
-                                String monthDay = post.trailComplitedDate.get(i).substring(5);
-                                String year = post.trailComplitedDate.get(i).substring(0, 4);
+                    if (snapshot.child("trailComplited").exists()){
+                        int i = 0;
+                        for(int idx: post.trailComplited){
+                            String monthDay = post.trailComplitedDate.get(i).substring(5);
+                            String year = post.trailComplitedDate.get(i).substring(0, 4);
 
-                                databaseReference.child(String.valueOf(post.trailComplited.get(i))).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<DataSnapshot> task) {
-                                        if(!task.isSuccessful()){
-                                            Log.d("trailComplitedListView", "Error");
-                                        }
-                                        else{
-                                            CompleteMountain completeMountain = new CompleteMountain(monthDay, year, task.getResult().child("MNTN_NM").getValue(String.class), task.getResult().child("PMNTN_NM").getValue(String.class));
-                                            mountainList.add(completeMountain);
-                                            adapter.addItem(monthDay, year, task.getResult().child("MNTN_NM").getValue(String.class), task.getResult().child("PMNTN_NM").getValue(String.class));
-                                            Log.d("adapter", "add Item");
-                                            lv_trailMemo.setAdapter(adapter);
-                                        }
+                            databaseReference.child(String.valueOf(idx-1)).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                    if(!task.isSuccessful()){
+                                        Log.d("trailComplitedListView", "Error");
                                     }
-                                });
-                            }
-                        }
-                        //lv_trailMemo.setAdapter(adapter);
-                    }
+                                    else{
+                                        CompleteMountain completeMountain = new CompleteMountain(monthDay, year, task.getResult().child("MNTN_NM").getValue(String.class), task.getResult().child("PMNTN_NM").getValue(String.class));
+                                        mountainList.add(completeMountain);
+                                        adapter.addItem(monthDay, year, task.getResult().child("MNTN_NM").getValue(String.class), task.getResult().child("PMNTN_NM").getValue(String.class));
+                                        Log.d("adapter", "add Item");
+                                        lv_trailMemo.setAdapter(adapter);
+                                    }
+                                }
+                            });
+                        } // end of for문
+
+                    } // end of listview
                 } else{
                     Log.d("FragmentHome", "유저 정보 없음...");
                 }
