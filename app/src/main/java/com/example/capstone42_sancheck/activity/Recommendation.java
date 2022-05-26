@@ -130,5 +130,4 @@ public class Recommendation extends AppCompatActivity  {
 //
 //        textView.setText(recommendArray);
     }
-
 }

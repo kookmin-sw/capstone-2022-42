@@ -107,7 +107,10 @@ public class FragmentSearch extends Fragment {
                             Mountain mountain = new Mountain();
                             mountain.setIndex(dataSnapshot.child("INDEX").getValue(int.class));
                             mountain.setMNTN_NM(dataSnapshot.child("MNTN_NM").getValue(String.class));
-                            mountain.setPMNTN_NM(dataSnapshot.child("PMNTN_NM").getValue(String.class));
+                            if (!dataSnapshot.child("PMNTN_NM").exists())
+                                mountain.setPMNTN_NM(" ");
+                            else
+                                mountain.setPMNTN_NM(dataSnapshot.child("PMNTN_NM").getValue(String.class));
                             mountain.setPMNTN_LT(dataSnapshot.child("PMNTN_LT").getValue(Double.class));
                             mountain.setPMNTN_UPPL(dataSnapshot.child("PMNTN_UPPL").getValue(Double.class));
                             mountain.setPMNTN_GODN(dataSnapshot.child("PMNTN_GODN").getValue(Double.class));
