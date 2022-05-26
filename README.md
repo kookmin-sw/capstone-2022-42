@@ -28,7 +28,8 @@ In this project, we will provide pedometers to record the number of steps, weekl
 
 🔸 Through the length, time required, and difficulty assigned to each hiking trail and hiking trail provided by this application, it helps users make appropriate choices from light exercise to normal climbing.  
 🔸 Ranks among users based on the score that can be obtained after completing the daily mission and completing the hiking trail stimulate competition among users and reward psychology, which can be expected to be a means of improving users' health.
-
+<h2>✔️ 영상</h2> 
+<h2>✔️시연 영상</h2> 
 
 <h2>✔️ 어플리케이션 기능 소개</h2>
   
@@ -62,30 +63,30 @@ In this project, we will provide pedometers to record the number of steps, weekl
 📛 이름: 박유영
 🔖 학번: ****1597
 ✉️ 메일: dbduda1@kookmin.ac.kr
-📌 역할: 팀장, Back-End 개발(사용자 정보 관리, 만보기 구현)
+📌 역할: 팀장, Back-End 개발(사용자 정보 관리, 만보기 구현,알림 기능,자정 이벤트,깃 허브 관리)
 ```  
 ```
 📛 이름: 김정민
 🔖 학번: ****0883
 ✉️ 메일: jess654852@kookmin.ac.kr
-📌 역할: Back-End 개발(일일 미션, 사용자 간 순위, 보상 및 점수 시스템 구현)
+📌 역할: Back-End 개발(미션, 사용자 간 순위, 보상 및 점수 시스템 구현)
 ```
 ```
 📛 이름: 송용욱
 🔖 학번: ****0711
 ✉️ 메일: songyonguk@kookmin.ac.kr
-📌 역할: Front-End 개발
+📌 역할: Front-End 개발, 추천알고리즘 개발
 ```
 ```
 📛 이름: 안현섭
 🔖 학번: ****5166
 ✉️ 메일: abo3323@kookmin.ac.kr
-📌 역할: Front-End 개발
+📌 역할: Front-End 개발, 추천알고리즘 개발
 ```
 ```
 📛 이름: 이정훈
 🔖 학번: ****1678
 ✉️ 메일: yellowoov@kookmin.ac.kr
-📌 역할: Back-End 개발(등산로 추천 시스템, 커뮤니티 구현)
+📌 역할: Back-End 개발(등산로 추천 시스템, 등산로 데이터 관리, 등산로 제공 기능)
 ```
 <h2>✔️ 사용법</h2>  
