@@ -10,10 +10,10 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_sancheck"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_sancheck_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone42_Sancheck"
         >
@@ -58,6 +58,8 @@
             android:name=".activity.MainActivity"
             android:exported="true" />
         <activity android:name=".activity.CartActivity" />
+        <activity android:name=".activity.CartSearchActivity" />
+        <activity android:name=".activity.CompleteSearchActivity" />
 
         <receiver android:name=".receiver.DateReceiver"
             android:enabled="true"

@@ -53,7 +53,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         builder.setSmallIcon(R.drawable.ic_baseline_notifications_none_24)
                 .setContentText("산Check")
-                .setContentText("걷기 미션 달성!!")
+                .setContentText("GOOD!! 오늘 목표 걸음 수를 달성했네요:)")
                 .setAutoCancel(true) // 알림 클릭시 해당 페이지로 이동하며 알림 자동 삭제
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT) // 중요도 설정, 안드로이드 7.1 이하 버전에서만 사용
                 .setContentIntent(pendingIntent)
