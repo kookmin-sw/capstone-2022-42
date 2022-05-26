@@ -42,8 +42,10 @@ https://user-images.githubusercontent.com/101504594/170473567-410cc313-2bef-4f6a
 
 
 <h2>✔️ 어플리케이션 기능 소개</h2>
-  
-<img width="1127" alt="크기변환 GITPAGE" src="https://user-images.githubusercontent.com/101504594/170470957-4ab87b7d-b6c1-4455-b872-0733ff21ad00.PNG">
+
+<img width="1000" alt="소개캡쳐" src="https://user-images.githubusercontent.com/101504594/170479348-2af5627b-0890-4624-a71a-3f46b56ec960.png">
+
+
 
 <h3>🚶 일간 걸음 수</h3>
 🔸 사용자의 일간 걸음 수를 기록하는 만보기 기능을 제공한다.
