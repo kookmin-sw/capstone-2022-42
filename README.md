@@ -106,6 +106,9 @@ https://user-images.githubusercontent.com/101504594/170473567-410cc313-2bef-4f6a
 ✉️ 메일: yellowoov@kookmin.ac.kr
 📌 역할: Back-End 개발(등산로 추천 시스템, 등산로 데이터 관리, 등산로 제공 기능)
 ```
+<h2>✔️ 사용법 </h2>
+
+### [다운로드](https://drive.google.com/file/d/1SlETHl_nKbdFlSQCTLuhvKPKDhLtk728/view?usp=sharing)
 
   
 <h2>✔️ 자료 </h2>  
