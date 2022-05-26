@@ -3,6 +3,7 @@ package com.example.capstone42_sancheck.activity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -23,6 +24,13 @@ import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
 import com.example.capstone42_sancheck.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -35,9 +43,18 @@ public class Recommendation extends AppCompatActivity  {
     RecyclerView recyclerView;
     SimpleTextAdapter simpleTextAdapter;
 
+    String level;
+    String time;
+    String distance;
 
+    double d_time;
+    double d_distance;
     double latitude1;
     double longitude1;
+
+    private FirebaseAuth mAuth;
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference = database.getReference();
 
     public void startLocationService() {
         LocationManager manager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
@@ -62,6 +79,31 @@ public class Recommendation extends AppCompatActivity  {
         dialog.show();
         super.onCreate(savedInstanceState);
 
+        mAuth = FirebaseAuth.getInstance();
+        final FirebaseUser user = mAuth.getCurrentUser();
+        final String uid = user.getUid();
+
+        databaseReference.child("Users").child(uid).child("recommend").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                level = snapshot.child("0").getValue().toString();
+                time = snapshot.child("1").getValue().toString();
+                distance = snapshot.child("2").getValue().toString();
+
+                d_time = Character.getNumericValue(time.charAt(0));
+                d_distance = Character.getNumericValue(distance.charAt(0));
+
+                Log.d("level = ", String.valueOf(level));
+                Log.d("time = ", String.valueOf(d_time));
+                Log.d("distance = ", String.valueOf(d_distance));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         setContentView(R.layout.activity_recommendation);
         client = LocationServices.getFusedLocationProviderClient(this);
@@ -130,5 +172,4 @@ public class Recommendation extends AppCompatActivity  {
 //
 //        textView.setText(recommendArray);
     }
-
 }
