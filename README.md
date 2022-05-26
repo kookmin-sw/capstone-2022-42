@@ -28,8 +28,7 @@ In this project, we will provide pedometers to record the number of steps, weekl
 🔸 Ranks among users based on the score that can be obtained after completing the mission and completing the hiking trail stimulate competition among users and reward psychology, which can be expected to be a means of improving users' health.
 <h2>✔️ 소개 영상</h2>
 
-https://user-images.githubusercontent.com/101504594/170473657-91ac81b6-0131-4254-9934-cd97869a82e5.mp4
-
+https://user-images.githubusercontent.com/54975374/170530616-8e38d954-589f-42a6-8a55-736991f09cca.mp4
  
 
 **소개동영상 링크**: https://youtu.be/IN6e0nv74rw
