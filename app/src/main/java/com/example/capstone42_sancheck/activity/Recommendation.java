@@ -126,7 +126,11 @@ public class Recommendation extends AppCompatActivity  {
             latitude1 = 126.94342324234;
 
         }
-        PyObject obj = pyobj.callAttr("main",0.02, 2, 3,latitude1,longitude1);
+        if (d_time == 0 || d_distance == 0){
+            d_time = 3;
+            d_distance = 2;
+        }
+        PyObject obj = pyobj.callAttr("main",d_distance, d_time*0.4, d_time*0.6,latitude1,longitude1);
         //PyObject obj = pyobj.callAttr("main",0.02, 2, 3,longitude1,latitude1);
         Log.d("유저가 고른 추천리스트", String.valueOf(longitude1));
         Log.d("유저가 고른 추천리스트", String.valueOf(latitude1));
@@ -167,7 +171,7 @@ public class Recommendation extends AppCompatActivity  {
 
 
         // ProgressDialog 없애기
-//        dialog.dismiss();
+        dialog.dismiss();
 //        System.out.println(cityArr);
 //
 //        textView.setText(recommendArray);
