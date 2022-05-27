@@ -31,7 +31,7 @@ In this project, we will provide pedometers to record the number of steps, weekl
 https://user-images.githubusercontent.com/54975374/170530616-8e38d954-589f-42a6-8a55-736991f09cca.mp4
  
 
-**소개동영상 링크**: https://youtu.be/IN6e0nv74rw
+**소개동영상 링크**: [https://youtu.be/mTB8fZTgXNQ]
 <h2>✔️ 시연 영상</h2> 
 
 https://user-images.githubusercontent.com/101504594/170473567-410cc313-2bef-4f6a-a1a4-28975961b9ac.mp4
