@@ -83,7 +83,7 @@ public class Recommendation extends AppCompatActivity  {
         final FirebaseUser user = mAuth.getCurrentUser();
         final String uid = user.getUid();
 
-        databaseReference.child("Users").child(uid).child("recommend").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Users").child(uid).child("recommendation").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 level = snapshot.child("0").getValue().toString();
