@@ -153,7 +153,7 @@ public class QuestionActivity extends AppCompatActivity {
                 recommendArray.add(time);
                 recommendArray.add(distance);
                 Log.d("유저가 고른 추천리스트", String.valueOf(recommendArray));
-                databaseReference.child("Users").child(uid).child("recommend").setValue(recommendArray);
+                databaseReference.child("Users").child(uid).child("recommendation").setValue(recommendArray);
                 startActivity(intent);
 
             }
