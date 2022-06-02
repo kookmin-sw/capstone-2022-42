@@ -42,6 +42,8 @@ public class User {
     public int dailyCheck;
     public String weeklyCheck;
     public int monthlyCheck;
+    // 추천 파트
+    public List<String> recommendation;
 
     public User() {
 
@@ -50,7 +52,7 @@ public class User {
     public User(String name, int rank, int score, int goal,
                 int walkDaily, int walkMon, int walkTue, int walkWen, int walkThu, int walkFri, int walkSat, int walkSun, long walkTotal,
                 List<Integer> trailComplited, List<Integer> trailPlan, List<String> trailComplitedDate,
-                List<Integer> missionDaily, List<Integer> missionWeekly, List<Integer> missionMonthly,
+                List<Integer> missionDaily, List<Integer> missionWeekly, List<Integer> missionMonthly, List<String> recommendation,
                 int missionDailyCount, int missionWeeklyCount, int dailyCheck, String weeklyCheck, int monthlyCheck) {
 
         this.name = name;
@@ -84,6 +86,8 @@ public class User {
         this.dailyCheck = dailyCheck;
         this.weeklyCheck = weeklyCheck;
         this.monthlyCheck = monthlyCheck;
+
+        this.recommendation = recommendation;
     }
 
     public String getName() { return name; }
@@ -303,5 +307,10 @@ public class User {
 
     public void setMonthlyCheck(int monthlyCheck){
         this.monthlyCheck = monthlyCheck;
+    }
+
+    public List<String> getRecommendation(){return recommendation;}
+    public void setRecommendation(List<String> recommendation){
+        this.recommendation = recommendation;
     }
 }

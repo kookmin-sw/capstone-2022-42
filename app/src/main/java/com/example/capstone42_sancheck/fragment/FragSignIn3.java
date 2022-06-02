@@ -169,11 +169,13 @@ public class FragSignIn3 extends Fragment {
         List<Integer> missionWeekly = new ArrayList<>();
         List<Integer> missionMonthly = new ArrayList<>();
 
+        List<String> recommendation = new ArrayList<>();
+
         // 사용자 rank 정보 초기화 어떻게 할지 적용 필요
         User member = new User(user.getDisplayName(), 0, 0, 10000,
                 0, 0, 0, 0, 0, 0, 0, 0, 0,
                 trailComplited, trailPlan, trailComplitedDate,
-                missionDaily, missionWeekly, missionMonthly,
+                missionDaily, missionWeekly, missionMonthly, recommendation,
                 0, 0, 0, "", 0);
 
         database = FirebaseDatabase.getInstance().getReference();
