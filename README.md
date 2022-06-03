@@ -107,7 +107,8 @@ https://user-images.githubusercontent.com/101504594/170473567-410cc313-2bef-4f6a
 ```
 <h2>✔️ 사용법 </h2>
 
-### [다운로드](https://drive.google.com/file/d/1SlETHl_nKbdFlSQCTLuhvKPKDhLtk728/view?usp=sharing)
+### [다운로드](https://drive.google.com/file/d/1yEhMV20AEUgSUIa6Gw5BKa52Gzvpzkku/view?usp=sharing)
+
 
   
 <h2>✔️ 자료 </h2>  
